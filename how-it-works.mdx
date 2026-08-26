@@ -1,0 +1,62 @@
+---
+title: "How a try order works"
+description: "The try-before-you-buy lifecycle from checkout through keep, return, and payment."
+keywords: ["trial", "keep", "return", "customer portal", "try order"]
+---
+
+A try order is a normal Shopify checkout with a trial on top. Shoppers are not billed for kept items until they finish in the customer portal — or the trial window ends.
+
+## Lifecycle
+
+<Steps>
+  <Step title="Checkout">
+    The shopper adds try-eligible items with the try button and checks out. Mirra records the order as a **try order**. Fulfillment follows your usual Shopify flow.
+  </Step>
+  <Step title="Delivery">
+    When the shipment is delivered, the **trial window** starts. Mirra can email or SMS the shopper with the due date and a link to the customer portal.
+  </Step>
+  <Step title="Decide">
+    In the portal, the shopper marks each item as **keep**, **return**, or **exchange** (if you offer exchanges). They choose a return method if they are sending items back.
+  </Step>
+  <Step title="Return">
+    Returned items follow the method you set per country: prepaid label, label in the parcel, shopper-arranged shipping, in-store drop-off, or the shopper’s own tracking. Staff approve, receive, and resolve returns in the **Returns Dashboard**.
+  </Step>
+  <Step title="Settle">
+    Kept items are charged (or the existing card hold is captured). Returned items are refunded, issued as store credit or a gift card, or swapped — based on your [return policies](/merchants/returns).
+  </Step>
+</Steps>
+
+## What shoppers see
+
+The **customer portal** is the shopper UI for decisions, labels, and payment. They should not need Shopify Admin.
+
+<AccordionGroup>
+  <Accordion title="During the trial">
+    Order contents, **Trial ends in** countdown, and keep / return / exchange actions per line. Status pills include **Trying**, **Keeping**, **Returning**, and **Exchanging**.
+  </Accordion>
+  <Accordion title="After they submit">
+    Confirmation of what they kept vs returned, return instructions or a label, and any outstanding payment (**Total to Pay**, restocking or return shipping fee).
+  </Accordion>
+  <Accordion title="If they do nothing">
+    Mirra reminds them before the due date. If they still do not complete the order, remaining items are treated as **kept** and charged. Document your store’s exact policy on your own FAQ.
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  Trial length is counted from **delivery**, not from checkout. In tests, confirm tracking or use **Click to mark delivered** in the portal so the trial clock can start.
+</Warning>
+
+## What merchants see
+
+In Shopify Admin, open the Mirra app:
+
+| Screen | Use it to |
+| --- | --- |
+| **Try Orders** | Review open try orders, copy the portal URL, capture payment, and manage trial lines |
+| **Settings** | Trial days, products, fees, countries, and return methods |
+| **Returns Dashboard** | Approve, receive, and pay out returns |
+| **Analytics** | Try vs buy performance, return reasons, and kept products |
+
+On a Shopify order, the **Mirra Returns** block shows return status. Pin it so your team always sees it.
+
+See the [customer portal](/shoppers/customer-portal) page for shopper-facing wording you can reuse in brand emails.

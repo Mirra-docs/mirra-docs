@@ -1,0 +1,108 @@
+---
+title: "Connect AI assistants (MCP)"
+description: "Give Cursor and other AI tools read-only access to try orders and analytics."
+keywords: ["MCP", "Cursor", "AI", "orders", "analytics"]
+---
+
+Mirra’s **MCP** (Model Context Protocol) connection lets AI tools such as **Cursor** answer questions about try-before-you-buy data — orders, returns in progress, and analytics — without leaving the assistant.
+
+Access is **read-only** and scoped to the Shopify store you approve. The AI cannot change orders, refunds, settings, or customers.
+
+## Before you start
+
+- Access to the **Try with Mirra** app in Shopify Admin
+- An AI tool that supports a **remote MCP server** with OAuth (for example Cursor)
+
+**Production MCP URL**
+
+```text
+https://shopify.prod.mirra-shopify.trywithmirra.com/mcp
+```
+
+Use this exact URL. Do not point tools at a storefront or Admin URL.
+
+## Set up in Cursor
+
+<Steps>
+  <Step title="Add the server">
+    Open **Cursor Settings → MCP**. Add a server named something clear, for example `mirra`.
+  </Step>
+  <Step title="Set the URL">
+    ```json
+    {
+      "mirra": {
+        "url": "https://shopify.prod.mirra-shopify.trywithmirra.com/mcp"
+      }
+    }
+    ```
+  </Step>
+  <Step title="Approve in Shopify">
+    Enable the server. When prompted, sign in and land on Mirra’s **Connect to Mirra** page in Shopify Admin. Confirm the store, then click **Allow access**.
+  </Step>
+  <Step title="Ask questions">
+    After approval, ask Mirra questions in chat. Other MCP clients follow the same pattern: add the URL → complete Shopify approval → query.
+  </Step>
+</Steps>
+
+<Tip>
+  If you manage more than one store, name each connection after the store (for example `mirra-acme`). Complete **Allow access** while logged into that store.
+</Tip>
+
+```json
+{
+  "mirra-acme": {
+    "url": "https://shopify.prod.mirra-shopify.trywithmirra.com/mcp"
+  },
+  "mirra-northshore": {
+    "url": "https://shopify.prod.mirra-shopify.trywithmirra.com/mcp"
+  }
+}
+```
+
+## What you can ask
+
+<Tabs>
+  <Tab title="Orders">
+    Search by order name, customer name, or email. Filter open try orders, orders needing review, returns in progress, or completed orders. Open a single order for line-level keep/return, payments, and shipments.
+
+    Example prompts:
+
+    - Show me all orders with a return in progress.
+    - Find order #1955 and summarise what’s being returned.
+    - Which open try orders still need review?
+  </Tab>
+  <Tab title="Analytics">
+    Try revenue, try vs buy AOV, kept vs returned outcomes, first-time try customers, common return reasons, and top kept products.
+
+    Example prompts:
+
+    - What were our try analytics for last month?
+    - Which products were returned most last quarter, and why?
+    - Show top kept products year to date.
+  </Tab>
+</Tabs>
+
+## Permissions
+
+| Topic | Behaviour |
+| --- | --- |
+| Access | Read-only orders and analytics |
+| Scope | The Shopify store you approved |
+| Who can connect | Anyone with Admin access to that store |
+| Idle connections | Unused connections expire after about **30 days** |
+
+MCP does **not** create refunds, labels, or setting changes. Use Mirra Admin for actions.
+
+## Revoke access
+
+In the Try with Mirra app: **Integrations → AI assistants (MCP) → Revoke access**. That disconnects every AI client for the shop. Staff can reconnect later with OAuth.
+
+<AccordionGroup>
+  <Accordion title="Troubleshooting">
+    | Issue | Try |
+    | --- | --- |
+    | Sign-in never opens Shopify | Confirm the URL ends with `/mcp`. |
+    | Invalid connection request | Restart from the AI tool for a fresh approval link. |
+    | Wrong store | Disconnect, then approve while logged into the correct Admin. |
+  </Accordion>
+</AccordionGroup>

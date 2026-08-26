@@ -1,0 +1,94 @@
+---
+title: "Returns, credit, and exchanges"
+description: "Set return policies, then approve, receive, and pay out returns in the Returns Dashboard."
+keywords: ["returns", "store credit", "gift card", "exchange", "Return Policies"]
+---
+
+When a shopper returns try items — or purchased items Mirra manages — you choose which **payouts** they can pick and how staff process the return.
+
+Open **Returns Dashboard** from the Mirra app nav. Policies live under **Settings → Return Policies**.
+
+## Payout options
+
+| Payout | Shopper receives |
+| --- | --- |
+| **Refund to original payment** | Money back on the original payment method |
+| **Store credit** | Balance on their Shopify customer account |
+| **Gift card** | A one-time gift card code (email + portal) |
+| **Exchange** | A replacement checkout, when your policy allows it |
+
+<Info>
+  Store credit uses Shopify customer accounts (new customer accounts). Gift cards work at standard checkout and do not require that setup.
+</Info>
+
+## Configure policies
+
+<Steps>
+  <Step title="Open return policies">
+    In the Returns Dashboard go to **Settings → Return Policies**. Filter **All policies**, **Purchased returns**, or **Try before you buy**. Click **Save all policies** when you finish.
+  </Step>
+  <Step title="Edit policy details">
+    Set **Policy name**, **Countries**, and **Returns allowed** (**Eligible** or **No returns**). Set **Return window (days)** and **Window starts from**: fulfillment date, delivery date, or order placed date.
+  </Step>
+  <Step title="Set eligibility rules">
+    Optionally match **Product tags**, **Order tags**, **Line item unit price**, or **Compare-at price**. Choose **All conditions must match (AND)** or **Any one condition can match (OR)**.
+  </Step>
+  <Step title="Choose payout types">
+    Under **Customer refund options**, turn on **Refund to original payment**, **Store credit**, and/or **Gift card**. For credit or gift cards you can set **Automatically issue store credit** / **Automatically issue gift card** and a bonus percent.
+  </Step>
+  <Step title="Configure exchanges">
+    Turn on **Enable exchange** / **Storefront exchange** and set **Exchange window (hours)**. Choose when to **Process replacement**: when the return is approved, in transit, or delivered.
+  </Step>
+  <Step title="Re-authorize the app if prompted">
+    Store credit, gift cards, and exchanges need extra Shopify scopes. If Shopify asks you to update permissions, approve them before testing. You can also accept **Optional permissions** on **Integrations**.
+  </Step>
+</Steps>
+
+<Tip>
+  Auto-approve returns and auto-issue credit are separate. Approving a return does not issue store credit unless **Automatically issue store credit** is on for that payout type.
+</Tip>
+
+Portal extras (sheet on Return Policies):
+
+- **Return item photos**: Don't ask · Optional · Required
+- **Default restock location**
+
+Try-order **return shipping** methods stay in Shopify Admin **Settings**. The dashboard shows them read-only. See [Return shipping](/merchants/return-shipping).
+
+## Process a return
+
+On **Returns**, tabs are **Needs action** · **In progress** · **Closed**. Filter **All**, **Trial**, **Regular**, or **Mixed**. Search by RMA, order, or customer.
+
+Open a return and:
+
+| Action | What happens |
+| --- | --- |
+| **Approve** | Optional notify customer. May auto-issue store credit or gift card |
+| **Decline return** | Requires a **Decline reason** and note |
+| **Receive return** | Received via post, in person, or manual |
+| **Issue store credit** / **Issue gift card** | Manual payout if auto-issue is off |
+| **Resolve return** / **Refund and close** | Refund to original payment, optional **Refund shipping**, restock, **Notify customer** |
+| **Cancel return** | Stop the return |
+
+**Advanced** on resolve lets you close with **no refund owed**.
+
+## Shopify setup for store credit
+
+1. **Settings → Customer accounts** — use **new customer accounts**.
+2. Enable **store credit** in Shopify.
+3. Make sure shoppers can log in on the storefront and at checkout.
+
+Gift cards skip this list: the shopper gets a code they can apply at checkout.
+
+<Warning>
+  Gift card creation through Shopify can be limited on some plans. Test on a development store before promising the option to customers.
+</Warning>
+
+<CardGroup cols={2}>
+  <Card title="Return shipping" icon="truck" href="/merchants/return-shipping">
+    Prepaid labels, self-ship, and in-store drop-off.
+  </Card>
+  <Card title="Integrations" icon="plug" href="/merchants/integrations">
+    Optional permissions and label providers.
+  </Card>
+</CardGroup>

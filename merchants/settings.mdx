@@ -1,0 +1,87 @@
+---
+title: "Try settings"
+description: "Set trial days, eligible products, return fees, and who can try — in Shopify Admin."
+keywords: ["settings", "trial days", "try products", "restocking fee"]
+---
+
+Configure try-before-you-buy in the Mirra app: **Settings**. Tabs are **General**, **Returns**, and **Advanced**. Click **Save Changes** when you are done, or **Discard Changes** to leave the form.
+
+Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.trywithmirra.com/knowledge-base/getting-started).
+
+## General
+
+<Steps>
+  <Step title="Set the trial window">
+    Under **Trial days**, enter how many days shoppers have after **delivery**. If they do not complete the order in time, remaining items are charged as kept.
+  </Step>
+  <Step title="Limit how many items they can try">
+    **Try Item Limit** sets **Minimum** and **Maximum** try items on a valid try order. Checkout blocks carts outside that range.
+  </Step>
+  <Step title="Choose try products">
+    **Manage Try Products** — select products or collections shoppers can try. Leave gift cards and non-physical SKUs out of try unless you have a specific flow for them.
+  </Step>
+  <Step title="Choose countries">
+    **Country Selection** limits where try is offered. Return shipping is configured per country on the Returns tab.
+  </Step>
+</Steps>
+
+### Restocking fee
+
+**Restocking Fee** is the return fee shoppers see in the portal payment summary and in the storefront how-it-works modal.
+
+| Setting | What it does |
+| --- | --- |
+| **Restocking Fee Title** | Label shoppers see: **Restocking Fee** or **Return Shipping Fee** |
+| **Free return order tag** | Exact Shopify order tag that waives the fee for that order |
+| **How should the fee be applied?** | **Order line item** or **Shopify return fee** |
+| **Use tiered return fees by item count** | Charge by how many items come back (for example first item free) |
+| **When is the fee charged?** | All try items returned, or any try items returned |
+
+<Tip>
+  Use a **Free return order tag** for VIP or marketing orders you do not want to charge a return fee on.
+</Tip>
+
+### Who can try
+
+**VIP and Customer Segment control**:
+
+- **Customer tag access** — **Enable** and set a **Required customer tag** so only tagged customers see try
+- **Create a shareable URL** — let people try without tagging every customer
+
+### Portal and alerts
+
+| Setting | What it does |
+| --- | --- |
+| **Add your logo** | Logo shown in the customer portal |
+| **Customer Care Instructions** | Copy shoppers see before they try items. Use **Reset to Default** to restore Mirra’s text |
+| **Notification Email** | Inbox for business alerts (orders, cancellations, and similar) |
+
+## Returns
+
+On the **Returns** tab:
+
+- **Try order exchanges** — turn on **Offer exchange on try orders**, set **Exchange checkout window (hours)**, and **Grant permissions** if Shopify asks
+- **Purchased item returns** — optional **Returns portal URL** and **Message shown to customers** for items Mirra does not manage (for example Loop or ReturnGO)
+- **Manage return reasons** — add, edit, or deactivate reasons shoppers pick in the portal
+- **Return labels / management** — how returns ship, per country. See [Return shipping](/merchants/return-shipping)
+
+## Advanced
+
+Use **Advanced** for cancellation and capture behaviour:
+
+- **Cancel order when authorization fails**
+- **Cancel orders with received payment**
+- **Restock items on cancellation**
+- **Email merchant on failure**
+- **Capture initial authorization** — for shops using Shopify manual capture
+
+**Deposit** and **Authorization Hold** are visible but locked. Contact [support@trywithmirra.com](mailto:support@trywithmirra.com) if you need to change how funds are held at checkout.
+
+<CardGroup cols={2}>
+  <Card title="Storefront" icon="store" href="/merchants/storefront">
+    Turn on the theme embed and product button.
+  </Card>
+  <Card title="Try orders" icon="box" href="/merchants/try-orders">
+    Review open trials and copy the portal URL.
+  </Card>
+</CardGroup>
