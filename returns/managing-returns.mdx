@@ -1,0 +1,93 @@
+---
+title: "Manage returns and track decisions in Mirra"
+sidebarTitle: "Managing Returns"
+description: "Learn how to use the Mirra Returns dashboard to review return queues, approve requests, generate prepaid labels, and track items back into stock."
+---
+
+The Mirra Returns dashboard gives you a central view of every return in progress, whether it comes from a Try at Home order or a standard Shopify purchase. From one screen you can review incoming requests, generate prepaid labels, process customer decisions, and see exactly when items are ready to sell again.
+
+## Return queue statuses
+
+Every return moves through a clear pipeline so you always know what needs your attention.
+
+<CardGroup cols={2}>
+  <Card title="Pending" icon="circle-exclamation">
+    The customer has initiated a return and is awaiting your approval or a prepaid label.
+  </Card>
+
+  <Card title="Label sent" icon="paper-plane">
+    You have generated and sent a return label. The customer can now ship the item back.
+  </Card>
+
+  <Card title="In transit" icon="truck-fast">
+    The return is on its way back to your warehouse or 3PL and has tracking activity.
+  </Card>
+
+  <Card title="Delivered" icon="box">
+    The item has arrived back. Inspect and process the customer's final decision (keep, exchange, store credit, or refund).
+  </Card>
+</CardGroup>
+
+## Processing a return
+
+Follow these steps when a return reaches the delivered stage and the customer has submitted their decision.
+
+<Steps>
+  <Step title="Open the returns queue">
+    In the Mirra Returns dashboard, filter by **Delivered** status to see items that have arrived and are ready for processing.
+  </Step>
+  <Step title="Review the customer's decision">
+    Open the return record to see whether the customer chose to keep, exchange, receive store credit, or request a refund. For exchanges, confirm the replacement size or colour the customer selected.
+  </Step>
+  <Step title="Approve the return">
+    Click **Approve return** to confirm you have received the item in acceptable condition and authorise the next action.
+  </Step>
+  <Step title="Execute the decision">
+    Depending on the customer's choice, trigger the appropriate action from the dashboard: issue a refund, create a store credit note, or dispatch an exchange item.
+  </Step>
+  <Step title="Move item to inventory">
+    Once the item is inspected and approved, mark it as ready for resale so it re-enters your sellable stock and updates your inventory counts.
+  </Step>
+</Steps>
+
+## Generating prepaid return labels
+
+Mirra Returns lets you generate prepaid return labels directly within the dashboard.
+
+1. Open the return record.
+2. Click **Generate label**.
+3. Select your preferred carrier from your connected shipping integrations.
+4. Send the label to the customer automatically via email or SMS.
+
+<Note>
+  Prepaid labels are available depending on your plan tier and connected carrier integrations. Supported carriers include Australia Post, Royal Mail, ShipStation, Starshipit, and others.
+</Note>
+
+## Return reason data as buying signals
+
+Every return in Mirra captures structured reason data: fit, size, colour, style, quality, or other. These fields are collected at the point of decision, when the experience is fresh in the customer's mind.
+
+Use this data to:
+
+- Adjust sizing charts on product pages.
+- Update buying and merchandising decisions before the next collection.
+- Identify fit issues that styling guidance (Mirra Concierge) could help prevent.
+- Reduce repeat returns by addressing root causes.
+
+## Inventory visibility
+
+The dashboard shows the full lifecycle of a returned item:
+
+- In transit to returns facility.
+- Delivered and pending inspection.
+- Approved and restocked.
+- Quarantined or marked for liquidation.
+
+<Warning>
+  Do not mark items as restocked before inspecting them. Restocking damaged or incomplete returns can lead to negative downstream reviews and chargebacks.
+</Warning>
+
+## What's next
+
+- [Exchanges and store credit](/returns/exchanges-store-credit) - Set up retention-first return options that recover revenue.
+- [Mirra Concierge](/concierge/overview) - Offer styling guidance that prevents returns before they happen.

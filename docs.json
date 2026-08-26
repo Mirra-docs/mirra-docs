@@ -1,0 +1,100 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "willow",
+  "name": "Mirra",
+  "colors": {
+    "primary": "#2563EB",
+    "light": "#60A5FA",
+    "dark": "#1D4ED8"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "group": "Get Started",
+        "icon": "rocket",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Try at Home",
+        "icon": "shirt",
+        "pages": [
+          "try-at-home/overview",
+          "try-at-home/how-it-works",
+          "try-at-home/configuration",
+          "try-at-home/customer-portal"
+        ]
+      },
+      {
+        "group": "Concierge",
+        "icon": "headset",
+        "pages": [
+          "concierge/overview",
+          "concierge/modes",
+          "concierge/setup"
+        ]
+      },
+      {
+        "group": "Returns",
+        "icon": "rotate-left",
+        "pages": [
+          "returns/overview",
+          "returns/managing-returns",
+          "returns/exchanges-store-credit"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "icon": "plug",
+        "pages": [
+          "integrations/overview",
+          "integrations/shopify",
+          "integrations/klaviyo-gorgias"
+        ]
+      },
+      {
+        "group": "Account & Billing",
+        "icon": "credit-card",
+        "pages": [
+          "account/plans",
+          "account/faq"
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@trywithmirra.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Book a Demo",
+      "href": "https://meetings-ap1.hubspot.com/lahern/website-meeting-link?"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://linkedin.com/company/try-with-mirra",
+      "instagram": "https://www.instagram.com/trywithmirra"
+    }
+  }
+}
