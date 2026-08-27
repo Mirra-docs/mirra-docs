@@ -1,7 +1,7 @@
 ---
 title: "Concierge bookings"
-description: "Offer styling sessions, manage bookings, and set availability in the Returns Dashboard."
-keywords: ["concierge", "styling session", "bookings", "availability"]
+description: "Offer styling sessions, add in-store locations, and manage bookings in the Returns Dashboard."
+keywords: ["concierge", "styling session", "bookings", "availability", "in-store"]
 ---
 
 Concierge lets shoppers **Book a styling session** from the product page and the customer portal. You manage bookings in the **Returns Dashboard**.
@@ -12,14 +12,14 @@ Add the **Mirra Concierge Booking** theme block so the CTA shows on product page
 
 ## Bookings
 
-Open **Bookings**. Tabs: **All** · **Pending** · **Confirmed** · **Contacted** · **Completed** · **Cancelled**.
+Open **Bookings**. Tabs: **All** · **Pending** · **Confirmed** · **Contacted** · **Completed** · **Cancelled**. Sort and filter by date from the same header menu as the returns inbox.
 
 <Steps>
   <Step title="Review a request">
-    Open a booking. **Approve booking** or **Reject**. You can also **Reschedule**, **Change time**, or **Confirm new time**.
+    Open a booking. **Approve booking** or **Reject**. You can also **Reschedule**, **Change time**, or **Confirm new time**. In-store bookings show the store the shopper chose.
   </Step>
   <Step title="Create a booking">
-    Click **New booking**, then **Create booking**, if staff are booking on behalf of a shopper.
+    Click **New booking**, then **Create booking**, if staff are booking on behalf of a shopper. For in-store types, pick a store first.
   </Step>
 </Steps>
 
@@ -35,17 +35,41 @@ Default menu label: **Book a styling session**. Headlines, subtext, and appointm
 
 Open **Settings** (under Concierge). Tabs: **Bookings** · **Availability** · **Communications**.
 
-**Bookings**
+Until you turn on **Visible to customers**, you will see **Hidden from customers**. Shoppers cannot book from the portal or product pages while you finish setup.
+
+### Stores
+
+On the **Bookings** tab, **Stores** are the locations shoppers can attend for **In-store** appointments.
+
+<Steps>
+  <Step title="Add a store">
+    Click **Add store**. Set **Store name**, **Address line 1**, **City**, **Postcode**, and **Country** (pick the country by name). Optional: **Address line 2**, **State / province**, **Phone**, and **Timezone**.
+  </Step>
+  <Step title="Set hours and notifications">
+    Turn on **Available for bookings** so shoppers can choose this location. Use **Custom store hours** if this location should not inherit the default concierge hours.
+
+    Under **Booking notifications**, set **Store notification email** and **Send notifications to**: **Main concierge inbox only**, **Store email only**, or **Both store and main inbox**.
+  </Step>
+  <Step title="Map in-store appointment types">
+    Edit each **In-store** appointment type. Choose **All enabled stores** (new stores are included automatically) or **Selected stores only**. Add and enable a store before you offer an in-store type.
+  </Step>
+</Steps>
+
+Disabled stores stay on historical bookings but are hidden from shoppers.
+
+### Bookings
 
 - Appointment types
+- Duration: **10 minutes**, **15 minutes**, **30 minutes**, **45 minutes**, **60 minutes**, **90 minutes**, or **120 minutes**
 - Channels: **Video call** · **Phone call** · **In-store**
+- **Where customers can book**: **Customer portal**, **Product pages**, or both
 - Approval: **Auto-confirm all bookings**, **Require approval for all bookings**, or **Auto-confirm during set hours**
 
-**Availability**
+### Availability
 
-Weekly hours, blocked time, holiday suggestions, and timezone.
+Weekly hours, blocked time, holiday suggestions, and timezone. Store-level hours override this when **Custom store hours** is on.
 
-**Communications**
+### Communications
 
 Merchant: **New booking**, **Customer amended booking**.
 
@@ -54,6 +78,10 @@ Customer: **Request received**, **Booking confirmed**, **Appointment reminder**,
 SMS (when enabled): booking confirmed / cancelled, appointment reminder, status updated.
 
 Set notification email, reply-to, and email theme (logo, colours, footer).
+
+### Customer visibility
+
+On **Settings**, turn on **Visible to customers** when you are ready. While it is off, copy is **Setup only — customers cannot see or book Concierge yet.**
 
 <CardGroup cols={2}>
   <Card title="Klaviyo concierge events" icon="envelope" href="/merchants/klaviyo">

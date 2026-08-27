@@ -18,7 +18,7 @@ Open **Returns Dashboard** from the Mirra app nav. Policies live under **Setting
 | **Exchange** | A replacement checkout, when your policy allows it |
 
 <Info>
-  Store credit uses Shopify customer accounts (new customer accounts). Gift cards work at standard checkout and do not require that setup.
+  Store credit uses Shopify customer accounts (new customer accounts). Gift cards work at standard checkout and do not require that setup. Shoppers who paid the original order with store credit or a gift card do not see those as refund options in the portal.
 </Info>
 
 ## Configure policies
@@ -37,7 +37,7 @@ Open **Returns Dashboard** from the Mirra app nav. Policies live under **Setting
     Under **Customer refund options**, turn on **Refund to original payment**, **Store credit**, and/or **Gift card**. For credit or gift cards you can set **Automatically issue store credit** / **Automatically issue gift card** and a bonus percent.
   </Step>
   <Step title="Configure exchanges">
-    Turn on **Offer exchange for items matching this policy**. Set the **Exchange window** (**Edit settings**). Choose when to **Process replacement**: when the return is approved, in transit, or delivered.
+    Turn on **Offer exchange for items matching this policy**. Set the **Exchange window** (**Edit settings**) — that is the deadline shoppers see in the portal. Choose when to **Process replacement**: when the return is approved, in transit, or delivered.
 
     Optional:
 
@@ -61,12 +61,15 @@ Portal extras (sheet on Return Policies):
 
 - **Return item photos**: Don't ask · Optional · Required
 - **Default restock location**
+- **Restock items by default** — **Enable restock by default** starts **Restock items** checked when you resolve a return. Turn it off if you restock inventory outside Shopify. You can still enable restock on one return. The primary action says **Refund & restock** when restock is on, or **Refund only** when it is off.
 
 Try-order **return shipping** methods stay in Shopify Admin **Settings**. The dashboard shows them read-only. See [Return shipping](/merchants/return-shipping).
 
 ## Process a return
 
 On **Returns**, tabs are **Needs action** · **In progress** · **Closed**. Filter **All**, **Trial**, **Regular**, or **Mixed**. Search by RMA, order, or customer.
+
+Click **Open Returns Portal**, enter an order number, then open or copy the customer portal link for that order.
 
 Open a return and:
 
