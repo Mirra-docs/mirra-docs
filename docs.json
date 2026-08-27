@@ -1,82 +1,95 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "willow",
-  "name": "Mirra",
+  "name": "Try with Mirra",
+  "description": "Try before you buy for Shopify — merchant and shopper documentation.",
   "colors": {
-    "primary": "#2563EB",
-    "light": "#60A5FA",
-    "dark": "#1D4ED8"
+    "primary": "#0b3d55",
+    "light": "#57e5f8",
+    "dark": "#0b3d55"
   },
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "https://trywithmirra.com"
+  },
+  "appearance": {
+    "default": "light"
+  },
+  "fonts": {
+    "family": "Open Sauce Sans",
+    "source": "/fonts/open-sauce-sans-latin-600-normal.woff2",
+    "format": "woff2",
+    "weight": 600,
+    "heading": {
+      "family": "Open Sauce Sans",
+      "source": "/fonts/open-sauce-sans-latin-600-normal.woff2",
+      "format": "woff2",
+      "weight": 600
+    },
+    "body": {
+      "family": "Poppins",
+      "weight": 400
+    }
+  },
+  "background": {
+    "color": {
+      "light": "#f6f7f8",
+      "dark": "#0a0c10"
+    }
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
   "navigation": {
-    "pages": [
+    "groups": [
       {
-        "group": "Getting Started",
+        "group": "Get started",
+        "icon": "rocket",
+        "pages": ["index", "quickstart", "how-it-works", "faq"]
+      },
+      {
+        "group": "For shoppers",
+        "icon": "user",
         "pages": [
-          "index",
-          "quickstart"
+          "shoppers/place-a-try-order",
+          "shoppers/customer-portal",
+          "shoppers/returns"
+        ]
+      },
+      {
+        "group": "For merchants",
+        "icon": "store",
+        "pages": [
+          "merchants/settings",
+          "merchants/storefront",
+          "merchants/try-orders",
+          "merchants/returns",
+          "merchants/return-shipping",
+          "merchants/promotions",
+          "merchants/analytics",
+          "merchants/concierge",
+          "merchants/klaviyo",
+          "merchants/mcp",
+          "merchants/integrations"
         ]
       }
     ],
-    "groups": [
-      {
-        "group": "Get Started",
-        "icon": "rocket",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      },
-      {
-        "group": "Try at Home",
-        "icon": "shirt",
-        "pages": [
-          "try-at-home/overview",
-          "try-at-home/how-it-works",
-          "try-at-home/configuration",
-          "try-at-home/customer-portal"
-        ]
-      },
-      {
-        "group": "Concierge",
-        "icon": "headset",
-        "pages": [
-          "concierge/overview",
-          "concierge/modes",
-          "concierge/setup"
-        ]
-      },
-      {
-        "group": "Returns",
-        "icon": "rotate-left",
-        "pages": [
-          "returns/overview",
-          "returns/managing-returns",
-          "returns/exchanges-store-credit"
-        ]
-      },
-      {
-        "group": "Integrations",
-        "icon": "plug",
-        "pages": [
-          "integrations/overview",
-          "integrations/shopify",
-          "integrations/klaviyo-gorgias"
-        ]
-      },
-      {
-        "group": "Account & Billing",
-        "icon": "credit-card",
-        "pages": [
-          "account/plans",
-          "account/faq"
-        ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Help Center",
+          "href": "https://helpcenter.trywithmirra.com/knowledge-base",
+          "icon": "life-ring"
+        },
+        {
+          "anchor": "Shopify App",
+          "href": "https://apps.shopify.com/try-with-mirra",
+          "icon": "bag-shopping"
+        }
+      ]
+    }
   },
   "navbar": {
     "links": [
@@ -87,14 +100,34 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Book a Demo",
+      "label": "Book a demo",
       "href": "https://meetings-ap1.hubspot.com/lahern/website-meeting-link?"
     }
   },
   "footer": {
     "socials": {
-      "linkedin": "https://linkedin.com/company/try-with-mirra",
+      "linkedin": "https://www.linkedin.com/company/try-with-mirra",
       "instagram": "https://www.instagram.com/trywithmirra"
     }
-  }
+  },
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude", "mcp", "cursor"]
+  },
+  "redirects": [
+    { "source": "/try-at-home/overview", "destination": "/how-it-works", "permanent": true },
+    { "source": "/try-at-home/how-it-works", "destination": "/how-it-works", "permanent": true },
+    { "source": "/try-at-home/configuration", "destination": "/merchants/settings", "permanent": true },
+    { "source": "/try-at-home/customer-portal", "destination": "/shoppers/customer-portal", "permanent": true },
+    { "source": "/concierge/overview", "destination": "/merchants/concierge", "permanent": true },
+    { "source": "/concierge/modes", "destination": "/merchants/concierge", "permanent": true },
+    { "source": "/concierge/setup", "destination": "/merchants/concierge", "permanent": true },
+    { "source": "/returns/overview", "destination": "/merchants/returns", "permanent": true },
+    { "source": "/returns/managing-returns", "destination": "/merchants/returns", "permanent": true },
+    { "source": "/returns/exchanges-store-credit", "destination": "/merchants/returns", "permanent": true },
+    { "source": "/integrations/overview", "destination": "/merchants/integrations", "permanent": true },
+    { "source": "/integrations/shopify", "destination": "/quickstart", "permanent": true },
+    { "source": "/integrations/klaviyo-gorgias", "destination": "/merchants/klaviyo", "permanent": true },
+    { "source": "/account/plans", "destination": "/faq", "permanent": true },
+    { "source": "/account/faq", "destination": "/faq", "permanent": true }
+  ]
 }

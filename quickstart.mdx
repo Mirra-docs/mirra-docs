@@ -1,46 +1,67 @@
 ---
-title: "Get started with Mirra on Shopify"
-description: "Install Mirra from the Shopify App Store, connect your store, configure a Try at Home experience, add the PDP button, and test your first trial order."
-sidebarTitle: "Quickstart"
+title: "Quickstart"
+description: "Install Try with Mirra, finish onboarding, and complete a first try order."
+keywords: ["install", "Shopify", "onboarding", "quickstart", "Go Live"]
 ---
 
-This guide walks you through installing Mirra on your Shopify store and launching your first Try at Home experience. By the end, shoppers will see a Try at Home option on your product pages, can place trial orders with no upfront payment, and manage keeps and returns in Mirra's branded customer portal.
+Get from install to a working try order. First-run stores land on **Welcome to Try with Mirra** and can set up try-before-you-buy in about 15 minutes.
+
+## Prerequisites
+
+- A Shopify store you can install apps on (a development store is fine)
+- Staff access to Shopify Admin
+- A product you can mark as try-eligible
+
+Click-by-click Shopify articles also live in [Getting started](https://helpcenter.trywithmirra.com/knowledge-base/getting-started).
+
+## Install and go live
 
 <Steps>
-  <Step title="Install Mirra from the Shopify App Store">
-    Visit the [Mirra app listing](https://apps.shopify.com/try-with-mirra) and click **Add app**. Grant the requested permissions so Mirra can sync products, orders, and customer data with your store.
+  <Step title="Install Try with Mirra">
+    Open the [Mirra app listing](https://apps.shopify.com/try-with-mirra) and click **Add app**. Approve the requested access so Mirra can create try orders, manage returns, and send notifications.
   </Step>
-  <Step title="Connect your Shopify store">
-    Inside the Mirra dashboard, complete the one-click Shopify connection. Mirra will import your catalog and set up the webhooks needed to track Try at Home orders automatically.
+  <Step title="Open onboarding">
+    In the Mirra app, go to **Onboarding**. Complete:
+
+    1. **Turn On App Embed** — enable **Try with Mirra** in the theme editor
+    2. **Add Button to Product Pages** — add the **Try with Mirra Button** on product templates
+    3. **Select Settings & Preferences** — choose try products, trial days, and return method
+
+    Until you click **Go Live**, the app stays in **Preview mode** and is not live on your storefront.
   </Step>
-  <Step title="Configure your first Try at Home experience">
-    Open **Try at Home settings** in the Mirra dashboard and set:
-
-    - **Trial window:** How many days customers have to try items at home (for example, 3, 5, or 7 days).
-    - **Item limits:** Maximum number of items allowed per trial order.
-    - **Payment authorization:** Whether Mirra places a temporary authorization hold or processes a fully deferred payment.
-
-    These settings control what shoppers see at checkout and in the customer portal.
+  <Step title="Choose products and trial days">
+    In **Settings**, under **Manage Try Products**, select the products or collections shoppers can try. Set **Trial days** — the window starts when the order is **delivered**, not at checkout.
   </Step>
-  <Step title="Add the Try at Home button to your PDP">
-    Mirra injects the Try at Home button directly onto your product detail pages. Verify the button appears on a test product and that the styling matches your theme. You can adjust placement and label copy in the Mirra dashboard if needed.
+  <Step title="Place a test try order">
+    On the storefront, add a try-eligible product with the try button (default label **Try Before You Buy**) and complete checkout as a test customer. Fulfill the order, then mark it delivered so the trial clock can start.
   </Step>
-  <Step title="Test a trial order">
-    Place a test order from your storefront as a customer. Confirm that:
-
-    1. The checkout shows a \$0 upfront total with an authorization hold.
-    2. The order appears in the Mirra dashboard under **Trial orders**.
-    3. You receive the branded customer portal link to confirm keep or return.
-
-    If the test order flows through all three stages, your Try at Home experience is live.
+  <Step title="Open the customer portal">
+    Use the portal link from the delivered-order email, or copy it from **Try Orders**. Keep one item and return another to confirm keep/return and payout options.
+  </Step>
+  <Step title="Go live">
+    When you are ready for shoppers, click **Go Live** in onboarding. The sidebar shows **App Live**.
   </Step>
 </Steps>
 
-<Tip>
-  Need help with advanced setup? [Book a demo](https://meetings-ap1.hubspot.com/lahern/website-meeting-link) with the Mirra team for a guided onboarding tailored to your brand.
-</Tip>
+<Check>
+  You should see the test order on **Try Orders** with line-level try / keep / return state, and the shopper should be able to finish the decision in the customer portal.
+</Check>
 
-## Next steps
+## After install
 
-- [Configure your Try at Home rules](/try-at-home/configuration) in depth: trial windows, item limits, and eligibility.
-- [Explore the customer portal](/try-at-home/customer-portal) to see what shoppers experience when they confirm keep or return.
+<CardGroup cols={2}>
+  <Card title="Storefront buttons and theme" icon="palette" href="/merchants/storefront">
+    App embed, product button, cart, and how-it-works blocks.
+  </Card>
+  <Card title="Return policies" icon="rotate" href="/merchants/returns">
+    Refunds, store credit, gift cards, and exchanges.
+  </Card>
+  <Card title="Klaviyo emails" icon="envelope" href="/merchants/klaviyo">
+    Send try emails from Klaviyo Flows instead of Mirra.
+  </Card>
+  <Card title="Marketing setup" icon="bullhorn" href="https://helpcenter.trywithmirra.com/knowledge-base">
+    Homepage, how-it-works page, and launch copy in the Help Center.
+  </Card>
+</CardGroup>
+
+Need help? [support@trywithmirra.com](mailto:support@trywithmirra.com) or [book a demo](https://meetings-ap1.hubspot.com/lahern/website-meeting-link).

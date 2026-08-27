@@ -1,0 +1,70 @@
+---
+title: "Klaviyo email events"
+description: "Send Mirra transactional emails from Klaviyo Flows using delegated metrics."
+keywords: ["Klaviyo", "email", "flows", "events"]
+---
+
+When **Klaviyo email delegation** is on for a notification type, Mirra does **not** send that message through its own mailer. It sends a **Klaviyo metric** with the same payload so you can trigger a Flow.
+
+Connect Klaviyo on **Integrations**, then use **Choose emails to send via Klaviyo** to pick which notifications Klaviyo owns.
+
+Utility emails that are not in this list (for example one-off portal login codes) are not delegatable.
+
+Merchant setup walkthrough: [Klaviyo email delegation](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-klaviyo-email-delegation).
+
+## Properties on every order event
+
+These fields appear on all order-related events below:
+
+| Property | Meaning |
+| --- | --- |
+| `OrderNumber` | Shopify order name (for example `#1001`) |
+| `OrderId` | Shopify order id |
+| `CustomerName` | Name on the order |
+| `CustomerEmail` | Email on the order |
+| `LineItems` | Trial lines: title, variant, quantity, price, image, SKU, ids |
+| `TotalPrice` | Order total |
+| `Currency` | Currency code |
+| `ShopName` | Merchant display name |
+| `ShopDomain` | `*.myshopify.com` domain |
+| `CustomerPortalUrl` | Link to the customer portal for this order |
+| `MirraEmail` | Subject, HTML body, and structured params Mirra would have sent |
+
+## Metrics you can flow on
+
+Use these **Klaviyo metric names** when you build Flows:
+
+<AccordionGroup>
+  <Accordion title="Trial and shipping">
+    - **Order Fulfilled** — try order shipped
+    - **Shipment Update** — out for delivery / shipment update
+    - **Order Delivered** — delivered; trial starts (`DeliveredAt`, `TrialEndTime`, `TrialDays`, tracking)
+  </Accordion>
+  <Accordion title="Trial decisions">
+    - **Reminder to Complete Order** — before the trial ends
+    - **Try Order Completed** — shopper finished keep/return
+    - **Try Order Exchanged** — exchange created
+    - **Order Line Items Updated** — merchant changed try/keep lines
+  </Accordion>
+  <Accordion title="Returns">
+    - **Complete Return** — return instructions (may include a label URL)
+    - **Return Scanned** — carrier scanned the return
+  </Accordion>
+  <Accordion title="Payments">
+    - **Failed Payment** — capture failed after trial
+    - **Overdue Failed Payment Warning** — still overdue
+    - **Payment Authorization Failed** / **Payment Reauthorization Failed**
+    - **Return Reauthorization Failed** — return shipment charge
+  </Accordion>
+  <Accordion title="Concierge">
+    Booking request received, confirmed, reminder, cancelled, and status change. Extra properties include `ConciergeBookingId`, `AppointmentType`, and `BookingStatus`.
+  </Accordion>
+</AccordionGroup>
+
+## Test events
+
+From the integrations UI you can send **one sample event per metric** so you can see triggers in Klaviyo without a real order. Samples include `IsMirraMerchantTestEvent: true`.
+
+<Check>
+  After a test send, each metric should appear in Klaviyo Metrics. Build the Flow, then turn on delegation for that notification type in Mirra.
+</Check>

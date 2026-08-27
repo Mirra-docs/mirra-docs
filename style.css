@@ -1,0 +1,116 @@
+/* Mirra brand — aligned with trywithmirra.com and shopper FAQ */
+
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fonts/open-sauce-sans-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/open-sauce-sans-latin-700-normal.woff2") format("woff2");
+}
+
+:root {
+  --mirra-bg: #f6f7f8;
+  --mirra-fg: #000000;
+  --mirra-muted: #6b6b6b;
+  --mirra-surface: #ffffff;
+  --mirra-border: rgba(0, 0, 0, 0.08);
+  --mirra-accent: #57e5f8;
+  --mirra-ink: #171717;
+  --mirra-deep: #0b3d55;
+}
+
+::selection {
+  background: var(--mirra-accent);
+  color: #000000;
+}
+
+#navbar {
+  background: linear-gradient(
+    168deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.8) 42%,
+    rgba(248, 248, 252, 0.74) 100%
+  );
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(24px) saturate(1.4);
+}
+
+#navbar img {
+  height: 1.75rem;
+  width: auto;
+  max-width: 9.5rem;
+}
+
+#topbar-cta-button {
+  background: var(--mirra-ink);
+  color: #ffffff;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+#page-title {
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.52);
+}
+
+card,
+accordion {
+  border-radius: 18px;
+  border: 1px solid var(--mirra-border);
+  background: var(--mirra-surface);
+  box-shadow: 0 10px 40px -28px rgba(0, 0, 0, 0.12);
+}
+
+callout {
+  border-radius: 14px;
+}
+
+#footer {
+  border-top: 1px solid var(--mirra-border);
+  background: var(--mirra-bg);
+}
+
+html.dark {
+  --mirra-bg: #0a0c10;
+  --mirra-fg: #ffffff;
+  --mirra-muted: #a1a1aa;
+  --mirra-surface: #16171b;
+  --mirra-border: rgba(255, 255, 255, 0.1);
+  --mirra-ink: #57e5f8;
+}
+
+html.dark #navbar {
+  background: linear-gradient(
+    168deg,
+    rgba(22, 23, 27, 0.92) 0%,
+    rgba(10, 12, 16, 0.82) 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.dark #topbar-cta-button {
+  background: var(--mirra-accent);
+  color: #050d18;
+}
+
+html.dark eyebrow {
+  color: rgba(255, 255, 255, 0.55);
+}

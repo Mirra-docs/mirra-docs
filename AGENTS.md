@@ -1,33 +1,32 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
+# Try with Mirra documentation
 
-# Documentation project instructions
+This repo is **AI-written, customer-facing** Mintlify docs. Humans review PRs; they do not author pages.
 
-## About this project
+**Before you create or edit any MDX or `docs.json` navigation, read [`WRITING.md`](./WRITING.md) and follow it as the writing prompt.** That file is the full script: audience, voice, what to skip, page shape, and the PR checklist.
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+## Non-negotiables
+
+- Document **only customer interactions**: a merchant in **Shopify Admin** or the **returns / merchant dashboard**, or a shopper in the **customer portal**
+- **Never** document internal workings or secret sauce from the codebase (how it is implemented, scored, stored, or routed)
+- Do not document fraud rules, billing internals, infra, or unpublished behaviour
+- Diff-and-PR only. Never regenerate the whole site. Never merge to `main` yourself
+- Product name: **Try with Mirra** or **Mirra**, never TWM
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- **Try order** — Shopify order with a trial window
+- **Keep / return** — shopper decisions per line
+- **Customer portal** — shopper UI after delivery
+- **Merchant dashboard** — Mirra admin for stores
 
-## Style preferences
+## Style (summary)
 
-{/* Add any project-specific style rules below */}
+- Second person, active voice, sentence case headings
+- Bold UI labels: Click **Settings**
+- Code formatting for URLs, file names, and JSON
+- Mintlify `<Steps>`, `<Card>`, `<Note>`, `<Warning>`, `<Tabs>`, `<Accordion>`
 
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+## Mintlify MCP
 
-## Content boundaries
-
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Docs product knowledge: `https://www.mintlify.com/docs/mcp`
+- Project edit MCP: `https://mcp.mintlify.com` (authenticate in Cursor if you use it)
