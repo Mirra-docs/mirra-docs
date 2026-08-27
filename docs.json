@@ -64,6 +64,7 @@
         "pages": [
           "merchants/settings",
           "merchants/storefront",
+          "merchants/marketing-setup",
           "merchants/try-orders",
           "merchants/returns",
           "merchants/return-shipping",
