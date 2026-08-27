@@ -17,6 +17,8 @@ mint dev
 
 Open [http://localhost:3000](http://localhost:3000) (or the next free port).
 
+The Mintlify dashboard editor is a weak preview for custom CSS and fonts. Check [the live site](https://mirra-docs.mintlify.site) or `mint dev`.
+
 ## Deploy
 
 Push or merge to `main`. The Mintlify GitHub App builds automatically.
