@@ -44,6 +44,32 @@ Click **Upload Return Label** on a badge to open **Add Tracking**. Click an **Av
   **Mark Order as Complete** stops Mirra from continuing keep/return automation on that order. Use it when staff have already settled the order outside the usual portal flow.
 </Warning>
 
+Use **Set Payment Due Date** when a shopper needs more time. In the last 24 hours they may also see **Request time extension** in the portal (adds 48 hours) and get an SMS with the same option.
+
+## Authorization and fulfillment
+
+Try orders should show as **Authorized** in Shopify, with the **Try with Mirra** tag. Fulfil and ship those as usual — do not wait for a capture.
+
+If the hold cannot be placed:
+
+- Shopify status is **On hold**, with a note such as **This order is awaiting payment authorization. Please do not fulfill until payment is authorized.**
+- The tag **Failed to authorize payment** is added
+- Mirra emails the shopper and retries for about **12 hours**
+- If a retry succeeds, the hold and tag are cleared and the order can ship
+- If it still fails, the order is cancelled when **Cancel order when authorization fails** is on in [Settings → Advanced](/merchants/settings)
+
+<Warning>
+  Do not fulfil orders tagged **Failed to authorize payment**, marked **On hold**, or with payment **Pending** or **Expired**. Your warehouse should skip those until the order is **Authorized** again — or cancelled.
+</Warning>
+
+Help Center: [Failed authorization recovery](https://helpcenter.trywithmirra.com/knowledge-base/failed-authorization-recovery) and [Warehouse and fulfilment](https://helpcenter.trywithmirra.com/knowledge-base/warehouse-and-fulfilment-integration-guide).
+
+## Missing or damaged returns
+
+If a shopper does not send an item back, or it comes back unsellable, you can add a charge on the Shopify order (edit the order and collect on the stored card) instead of opening a separate invoice. Write the reason on the order — for example item not returned, or damaged in trial.
+
+Help Center: [Manual charges for returns](https://helpcenter.trywithmirra.com/knowledge-base/manual-charges-for-returns-missing-or-damaged-items).
+
 ## Next
 
 <CardGroup cols={2}>

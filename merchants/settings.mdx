@@ -18,7 +18,11 @@ Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.
     **Try Item Limit** sets **Minimum** and **Maximum** try items on a valid try order. Checkout blocks carts outside that range.
   </Step>
   <Step title="Choose try products">
-    **Manage Try Products** — select products or collections shoppers can try. Leave gift cards and non-physical SKUs out of try unless you have a specific flow for them.
+    **Manage Try Products** — select products or collections shoppers can try. Prefer **Collections** so eligibility updates when a product meets or leaves your rules. Click **Manage Collections**, tick the collections, then **Select** and **Save Changes**.
+
+    Leave gift cards, shipping protection, and other non-physical SKUs out of try. Exclude pre-order or final-sale products if those should not be tryable.
+
+    For a smart collection, Shopify treats a **compare-at price** of empty and **\$0.00** as different values. Use empty (greyed-out \$0.00 in Shopify) for full-price items, or add a second collection that catches the other case. Click-by-click: [Setting up a Try Before You Buy product collection](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-a-tbyb-collection).
   </Step>
   <Step title="Choose countries">
     **Country Selection** limits where try is offered. Return shipping is configured per country on the Returns tab.
@@ -62,7 +66,7 @@ Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.
 On the **Returns** tab:
 
 - **Try order exchanges** — turn on **Offer exchange on try orders**, set **Exchange checkout window (hours)** (the portal uses this window for the deadline shoppers see), and **Grant permissions** if Shopify asks
-- **Purchased item returns** — optional **Returns portal URL** and **Message shown to customers** for items Mirra does not manage (for example Loop or ReturnGO). Shoppers see that message under **Items that are already yours**, plus **Start a return** when you set a URL
+- **Purchased item returns** — optional **Returns portal URL** and **Message shown to customers** for items Mirra does not manage (for example Loop or ReturnGO). Shoppers see that message under **Items that are already yours**, plus **Start a return** when you set a URL. Keep try completions in Mirra — see [Other returns portals](/merchants/returns#other-returns-portals)
 - **Manage return reasons** — add, edit, or deactivate reasons shoppers pick in the portal
 - **Return labels / management** — how returns ship, per country. See [Return shipping](/merchants/return-shipping)
 
@@ -70,8 +74,8 @@ On the **Returns** tab:
 
 Use **Advanced** for cancellation and capture behaviour:
 
-- **Cancel order when authorization fails**
-- **Cancel orders with received payment**
+- **Cancel order when authorization fails** — if a card hold cannot be placed, Mirra retries for about **12 hours**, then cancels the Shopify order when this is on. Leave it on unless you want staff to cancel those orders themselves. What appears on the Shopify order: [Try orders](/merchants/try-orders#authorization-and-fulfillment)
+- **Cancel orders with received payment** — used with the setting above when part of the order already has a payment
 - **Restock items on cancellation**
 - **Email merchant on failure**
 - **Capture initial authorization** — for shops using Shopify manual capture
