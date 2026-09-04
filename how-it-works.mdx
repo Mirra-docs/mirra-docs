@@ -10,7 +10,7 @@ A try order is a normal Shopify checkout with a trial on top. Shoppers are not b
 
 <Steps>
   <Step title="Checkout">
-    The shopper adds try-eligible items with the try button and checks out. Mirra records the order as a **try order**. Fulfil and ship when Shopify shows **Authorized** and the **Try with Mirra** tag — do not wait for a capture. Skip orders tagged **Failed to authorize payment**.
+    The shopper adds try-eligible items with the try button and checks out with a saved card (not Afterpay). Mirra records the order as a **try order**. In Shopify the total often shows **\$0** with the **Try with Mirra** tag while the card is **Authorized**. Fulfil those — do not wait for a capture. Skip orders tagged **Failed to authorize payment**.
   </Step>
   <Step title="Delivery">
     When the shipment is delivered, the **trial window** starts. Mirra can email or SMS the shopper with the due date and a link to the customer portal.
@@ -22,7 +22,7 @@ A try order is a normal Shopify checkout with a trial on top. Shoppers are not b
     Returned items follow the method you set per country: prepaid label, label in the parcel, shopper-arranged shipping, in-store drop-off, or the shopper’s own tracking. Staff approve, receive, and resolve returns in the **Returns Dashboard**.
   </Step>
   <Step title="Settle">
-    Kept items are charged (or the existing card hold is captured). Returned items are refunded, issued as store credit or a gift card, or swapped — based on your [return policies](/merchants/returns).
+    Kept items are charged (or the existing card hold is captured). For try returns the hold is usually **released** — you do not refund a payment that was never captured. Store credit or gift card payouts are finished in the [Returns Dashboard](/merchants/returns), not Shopify.
   </Step>
 </Steps>
 

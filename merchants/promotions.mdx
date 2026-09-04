@@ -4,7 +4,7 @@ description: "Create try-order discounts, gift-with-purchase rules, and free sam
 keywords: ["discounts", "gift rules", "samples", "promotions"]
 ---
 
-Use **Discounts**, **Gift Rules**, and **Samples** in the Mirra app to attach offers to try orders. These are separate from Shopify discount codes you already run.
+Use **Discounts**, **Gift Rules**, and **Samples** in the Mirra app to attach offers to try orders. Prefer these when the promotion should survive a partial keep/return.
 
 Help Center: [Discount & Promo Codes for Mirra Orders](https://helpcenter.trywithmirra.com/knowledge-base/merchant-guides).
 
@@ -25,6 +25,19 @@ Open **Discounts**. Click **Create** (or open an existing row to edit). Table co
 <Note>
   **Minimum Item Requirements** is kept items after the trial, not how many try items they put in the cart.
 </Note>
+
+## Shopify and third-party discounts
+
+Shoppers enter a Shopify code at the **first** checkout, not in the portal.
+
+| Type | Use on try orders? |
+| --- | --- |
+| Shopify **percentage off** | Usually yes. Create it as a **product discount**, not an **order discount**, so it does not attach to a restocking fee if they return everything. |
+| Shopify **fixed amount off** (for example \$20 off) | Avoid. Shopify splits the amount across lines, so a partial keep leaves an awkward leftover. |
+| Shopify **Buy X Get X** | No — it does not split cleanly when they keep only part of the order. Use Mirra **Buy X Get Y** instead. |
+| Gift card or voucher at try checkout | No. They must pay with a card (Shopify Payments or PayPal). They can apply a gift card later in the [customer portal](/shoppers/customer-portal) when they settle. |
+| Afterpay and other buy now, pay later | No. Try checkout needs a saved card. |
+| Third-party discount apps | Test a keep-and-return before you go live. Behaviour varies. |
 
 ## Gift rules
 
