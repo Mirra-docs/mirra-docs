@@ -1,7 +1,7 @@
 ---
 title: "Storefront and checkout"
-description: "Turn on the Try with Mirra theme embed, product button, and cart blocks."
-keywords: ["theme", "app embed", "Try Before You Buy", "checkout"]
+description: "Turn on the theme embed, product button, cart blocks, and checkout — including when shipping is charged."
+keywords: ["theme", "app embed", "Try Before You Buy", "checkout", "shipping"]
 ---
 
 Shoppers start a try order from your storefront. You enable that in the Shopify theme editor, then finish **Select Settings & Preferences** in **Onboarding**.
@@ -58,6 +58,8 @@ App embed settings you can change:
   Cart toggle copy: **Try Before You Buy all eligible items**. Shoppers can mix try and buy in one checkout when some lines are not try-eligible.
 </Note>
 
+To hide or disable try on some variants (for example pre-order), use the Help Center theme snippets — [Disable Try with Mirra on specified variants](https://helpcenter.trywithmirra.com/knowledge-base/disable-try-with-mirra-for-pre-order-or-specific-variants) — rather than removing the whole product from **Manage Try Products**.
+
 ## Checkout
 
 Enable the Try with Mirra checkout blocks and functions in **Shopify Admin → Settings → Checkout**. When you add a Try with Mirra checkout customization, Mirra can turn the matching function on automatically.
@@ -68,8 +70,28 @@ On try checkouts, shoppers may see:
 - A card-authorization checkbox: they must accept that the card will be authorised for the total shown
 - Min/max try item errors from your **Try Item Limit**
 - A phone number requirement if your store needs it for the portal
+- Deferred-payment labels such as **Total due after trial (if kept)** or **Due after trial (if kept)** — if you have updated Shopify theme checkout language
 
-PayPal can be hidden on try carts. Custom try shipping rates, if you use them, are set in Shopify shipping — see [Getting started](https://helpcenter.trywithmirra.com/knowledge-base/getting-started) in the Help Center.
+PayPal is hidden on try carts. Afterpay and other buy-now-pay-later options are not supported — shoppers need a saved card. Gift cards and vouchers cannot be used at the first try checkout; they can be applied later in the portal. See [Discounts](/merchants/promotions).
+
+### When shipping is charged
+
+This is Shopify checkout behaviour. Shoppers pay for shipping either way — including if they return every try item.
+
+| Cart | When shipping is charged |
+| --- | --- |
+| Every line is try | With kept items, at the end of the trial |
+| At least one line is not try | Upfront at checkout |
+
+A gift, a shipping-protection add-on (for example Route), or a normal purchase in the same cart is not a try line, so shipping is charged at checkout. Click & Collect does not waive outbound shipping: shoppers are still charged for it when they finish in the portal.
+
+To set a flat try shipping rate, create a custom rate named **Try with Mirra** in **Shopify Admin → Settings → Shipping and delivery**. Click-by-click: [Custom shipping rate for TBYB orders](https://helpcenter.trywithmirra.com/knowledge-base/custom-shipping-rate-for-tbyb-orders).
+
+### Checkout and cart wording
+
+Recommended Shopify checkout strings (deferred due date, buyer consent, and similar) are in [Recommended Shopify settings](https://helpcenter.trywithmirra.com/knowledge-base/recommended-shopify-settings). Require email and a shipping-address phone number there so portal login and SMS can reach the shopper.
+
+The cart can still show the full product price even when checkout charges \$0 today. Optional theme edits for **Due Today** line prices and subtotals: [Displaying Due Today prices](https://helpcenter.trywithmirra.com/knowledge-base/displaying-due-today-prices-in-your-shopify-cart).
 
 ## Order status page
 
