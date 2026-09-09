@@ -20,6 +20,10 @@ Return badges you may see: **No Return**, **Return Initiated**, **Return Overdue
   On a Shopify order details page, pin the **Mirra Returns** block so staff see Mirra return status without opening the app. If there are no Mirra returns, the block shows **No Mirra returns**.
 </Tip>
 
+A new try order in Shopify is tagged **Try with Mirra**. The order total often shows **\$0** while the card is **Authorized** — that is expected. When the shopper finishes in the portal, staff get a summary email of what they kept and returned.
+
+If they complete an exchange, the original order is tagged **Try with Mirra - Exchanged for new order**. The replacement is a new paid order tagged **Try with Mirra Exchange**. Fulfil that new order as usual.
+
 ## Actions on one order
 
 Select an order, then **More actions**:
@@ -31,11 +35,12 @@ Select an order, then **More actions**:
 | **Manage Return** | Add carrier and tracking (**Add Tracking**, **Send to customer**) |
 | **Generate Return Label** | Create a prepaid label when your return method supports it |
 | **Mark Return as Delivered** | Mark returned items received |
-| **Manage Trial Items** / **Review Trial Items** | **Move to Trial** or **Remove from Trial** |
+| **Manage Trial Items** / **Review Trial Items** | **Move to Trial** or **Remove from Trial** after you change lines on the Shopify order |
 | **Set Payment Due Date** | Change the due date |
-| **Authorize Payment** | Retry authorization |
+| **Authorize Payment** | Retry authorization, or refresh the hold after a trial-item edit |
 | **Capture Payment** | Capture now |
 | **Void Authorization** | Release the hold |
+| **Cancel order** | Cancel an **unfulfilled** try order (and any purchased lines on the same checkout) |
 | **Mark Order as Complete** | Stop Mirra automation on this order |
 
 Click **Upload Return Label** on a badge to open **Add Tracking**. Click an **Available** restock badge to open **Restock Items**.
@@ -43,6 +48,51 @@ Click **Upload Return Label** on a badge to open **Add Tracking**. Click an **Av
 <Warning>
   **Mark Order as Complete** stops Mirra from continuing keep/return automation on that order. Use it when staff have already settled the order outside the usual portal flow.
 </Warning>
+
+To change what is on trial, edit the Shopify order first, then **Manage Trial Items**. If the total changed, click **Authorize Payment** so the hold matches the new amount.
+
+Use **Set Payment Due Date** when a shopper needs more time. In the last 24 hours they may also see **Request time extension** in the portal (adds 48 hours) and get an SMS with the same option.
+
+### Cancel before the order ships
+
+If the shopper wants to cancel before fulfilment, open the order in Mirra, click **More actions → Cancel order**, and confirm. Do not use a Shopify refund as a stand-in — that leaves the try hold in place.
+
+On a mixed cart, purchased lines are refunded and try lines release the hold. You cannot change the card on an existing order. Cancel it and ask the shopper to place a new one.
+
+If the order has already shipped or been delivered, use the portal or [returns](/merchants/returns) flow instead.
+
+## Authorization and fulfillment
+
+Try orders should show as **Authorized** in Shopify, with the **Try with Mirra** tag. Fulfil and ship those as usual — do not wait for a capture.
+
+Payment statuses you may see on **Try Orders**:
+
+| Status | What it means |
+| --- | --- |
+| **Due** | Capture is next. Wait until the order is **delivered** — capturing earlier charges them before the trial starts. |
+| **Return in progress** | A return is open. If it is overdue, Mirra emails and texts the shopper. |
+| **Expiring** / **Expired** | The bank hold is near or past its usual window (often about 7 days). Mirra retries the hold when funds are available. |
+| **Partially paid** | Some of the balance is collected. Mirra keeps retrying the rest. |
+
+If the hold cannot be placed:
+
+- Shopify status is **On hold**, with a note such as **This order is awaiting payment authorization. Please do not fulfill until payment is authorized.**
+- The tag **Failed to authorize payment** is added
+- Mirra emails the shopper and retries for about **12 hours**
+- If a retry succeeds, the hold and tag are cleared and the order can ship
+- If it still fails, the order is cancelled when **Cancel order when authorization fails** is on in [Settings → Advanced](/merchants/settings)
+
+<Warning>
+  Do not fulfil orders tagged **Failed to authorize payment**, marked **On hold**, or with payment **Pending** or **Expired**. Your warehouse should skip those until the order is **Authorized** again — or cancelled.
+</Warning>
+
+Help Center: [Failed authorization recovery](https://helpcenter.trywithmirra.com/knowledge-base/failed-authorization-recovery) and [Warehouse and fulfilment](https://helpcenter.trywithmirra.com/knowledge-base/warehouse-and-fulfilment-integration-guide).
+
+## Missing or damaged returns
+
+If a shopper does not send an item back, or it comes back unsellable, you can add a charge on the Shopify order (edit the order and collect on the stored card) instead of opening a separate invoice. Write the reason on the order — for example item not returned, or damaged in trial.
+
+Help Center: [Manual charges for returns](https://helpcenter.trywithmirra.com/knowledge-base/manual-charges-for-returns-missing-or-damaged-items).
 
 ## Next
 
