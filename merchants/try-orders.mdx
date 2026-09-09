@@ -14,6 +14,8 @@ Tabs: **To Review** · **All** · **Open** · **Return In Progress** · **Closed
 
 Columns include **Order**, **Date**, **Customer**, **Total**, **Items**, **Payment Due**, **Payment status**, **Returns**, and **Restock**. Use **Edit Columns** to show **Fulfillment**, **Delivery**, or **Amount Due**.
 
+Search by order name matches the **full** order number. Nearby numbers do not appear as extra hits.
+
 Return badges you may see: **No Return**, **Return Initiated**, **Return Overdue**, **Open**, **Upload Return Label**, **In Transit**, **Delivered**.
 
 <Tip>
@@ -37,13 +39,15 @@ Select an order, then **More actions**:
 | **Mark Return as Delivered** | Mark returned items received |
 | **Manage Trial Items** / **Review Trial Items** | **Move to Trial** or **Remove from Trial** after you change lines on the Shopify order |
 | **Set Payment Due Date** | Change the due date |
-| **Authorize Payment** | Retry authorization, or refresh the hold after a trial-item edit |
+| **Authorize Payment** | Retry authorization — including when a hold is already on the card but the amount is short |
 | **Capture Payment** | Capture now |
 | **Void Authorization** | Release the hold |
-| **Cancel order** | Cancel an **unfulfilled** try order (and any purchased lines on the same checkout) |
+| **Retry Shippo Label** | Recreate a failed or replaced US return label |
 | **Mark Order as Complete** | Stop Mirra automation on this order |
 
 Click **Upload Return Label** on a badge to open **Add Tracking**. Click an **Available** restock badge to open **Restock Items**.
+
+If a Shippo label fails or needs a new weight, use **Retry Shippo Label** (Shopify Admin) or **Retry Shippo label** / **Create Shippo label** (dashboard **Orders**). Enter **Customer mailing address**, optional **Return-to address**, and **Packed weight** (**Pounds** / **Ounces**). Weight is required when replacing an existing label. Tick **Email the new label to the customer**. **Regenerate label** replaces the current label — only do that if the shopper has not already shipped it.
 
 <Warning>
   **Mark Order as Complete** stops Mirra from continuing keep/return automation on that order. Use it when staff have already settled the order outside the usual portal flow.
@@ -55,7 +59,7 @@ Use **Set Payment Due Date** when a shopper needs more time. In the last 24 hour
 
 ### Cancel before the order ships
 
-If the shopper wants to cancel before fulfilment, open the order in Mirra, click **More actions → Cancel order**, and confirm. Do not use a Shopify refund as a stand-in — that leaves the try hold in place.
+If the shopper wants to cancel before fulfilment, open the order in **Shopify** and click **Cancel order**. Do not use a Shopify refund as a stand-in — that leaves the try hold in place. Mirra then shows **Cancelled** and releases the hold.
 
 On a mixed cart, purchased lines are refunded and try lines release the hold. You cannot change the card on an existing order. Cancel it and ask the shopper to place a new one.
 
@@ -69,10 +73,15 @@ Payment statuses you may see on **Try Orders**:
 
 | Status | What it means |
 | --- | --- |
-| **Due** | Capture is next. Wait until the order is **delivered** — capturing earlier charges them before the trial starts. |
-| **Return in progress** | A return is open. If it is overdue, Mirra emails and texts the shopper. |
-| **Expiring** / **Expired** | The bank hold is near or past its usual window (often about 7 days). Mirra retries the hold when funds are available. |
-| **Partially paid** | Some of the balance is collected. Mirra keeps retrying the rest. |
+| **Authorized** | Card hold is in place. Fulfil these. Wait until the order is **delivered** before **Capture Payment**. |
+| **Pending** | Payment has not completed. Do not fulfil. |
+| **Partially Paid** | Some of the balance is collected. |
+| **Paid** | Payment is captured. |
+| **Expired** | The hold failed or ran out. Do not fulfil. |
+| **Voided** / **Cancelled** | The hold is released or the order is cancelled. |
+| **Payment Pending Restock** | Capture waits until the return is **Closed**. |
+| **Overdue** | The payment due date has passed. |
+| **Refund Owed** | A refund is still outstanding. |
 
 If the hold cannot be placed:
 

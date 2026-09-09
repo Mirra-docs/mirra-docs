@@ -71,6 +71,7 @@
           "merchants/promotions",
           "merchants/analytics",
           "merchants/concierge",
+          "merchants/emails",
           "merchants/klaviyo",
           "merchants/mcp",
           "merchants/integrations"

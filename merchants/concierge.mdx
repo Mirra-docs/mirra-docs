@@ -33,9 +33,9 @@ Default menu label: **Book a styling session**. Headlines, subtext, and appointm
 
 ## Settings
 
-Open **Settings** (under Concierge). Tabs: **Bookings** · **Availability** · **Communications**.
+Open **Settings** (under Concierge). Tabs: **Bookings** · **Availability** · **Communications** · **Integrations**.
 
-Until you turn on **Visible to customers**, you will see **Hidden from customers**. Shoppers cannot book from the portal or product pages while you finish setup.
+Until you turn on **Visible to customers**, copy is **Setup only — customers cannot see or book Concierge yet.** Shoppers cannot book from the portal or product pages while you finish setup.
 
 ### Stores
 
@@ -57,13 +57,56 @@ On the **Bookings** tab, **Stores** are the locations shoppers can attend for **
 
 Disabled stores stay on historical bookings but are hidden from shoppers.
 
-### Bookings
+### Appointment types
 
-- Appointment types
-- Duration: **10 minutes**, **15 minutes**, **30 minutes**, **45 minutes**, **60 minutes**, **90 minutes**, or **120 minutes**
-- Channels: **Video call** · **Phone call** · **In-store**
+Click **New type**. Set **Name**, **Duration** (**10 minutes** through **120 minutes**), and **About** — longer copy shoppers see under the name when they choose a type.
+
+**Channel** is **Virtual** (shopper picks video or phone) or **In-store**. For **Virtual**, tick **Offered methods**: **Video call** and/or **Phone call**. Shoppers only choose a method when both are on.
+
+Also set:
+
+- **Available to customers**
+- **Booking inbox email** — new booking alerts and customer replies for this type. Leave blank to use the shop-wide notification and reply-to emails (or the store email for in-store types)
 - **Where customers can book**: **Customer portal**, **Product pages**, or both
 - Approval: **Auto-confirm all bookings**, **Require approval for all bookings**, or **Auto-confirm during set hours**
+
+Older types may still show **Video call** or **Phone call** as **(legacy)**. New types use **Virtual**.
+
+### Microsoft 365 and Outlook
+
+On an appointment type, **Microsoft 365** connects the mailbox that should own the calendar events.
+
+<Steps>
+  <Step title="Save the type first">
+    Save the type, then click **Connect a new account**. Choose **No Microsoft account** or a connected mailbox.
+  </Step>
+  <Step title="Choose an Outlook calendar">
+    Set **Outlook calendar**. New bookings use that calendar. Existing synced bookings stay where they are.
+  </Step>
+  <Step title="Block busy time (optional)">
+    Turn on **Block times that are busy in Outlook**. Events marked **Busy** or **Out of Office** hide those slots. **Tentative** events are ignored.
+  </Step>
+</Steps>
+
+On **Integrations**, **Microsoft 365** copies confirmed bookings to Outlook and creates Teams meetings for video calls.
+
+On a booking, **Details** can show **Join with Teams**. If sync failed you will see **This booking has not synced to Outlook**.
+
+Confirmed video bookings can include a Teams join link. Shoppers see **Join the Video Call**, which unlocks 15 minutes before the start (**Available from** a time).
+
+### Call and WhatsApp
+
+**Call & WhatsApp** is optional contact on the Concierge list — shoppers tap to call or open WhatsApp. It is not a booking.
+
+Click **Add Call or WhatsApp**, then **Add Call** or **Add WhatsApp**. Set the number and label. Blank labels show **Call us** or **WhatsApp us**. Use **Add a country override** / **Add country** if a ship-to country should use a different number.
+
+### Concierge button
+
+**Concierge button** sets the portal and product-page call-to-action. Click the title to edit **Button title** (default **Book a styling session**). **Add a button image** is optional — without one, shoppers see text only.
+
+### Customer photos
+
+On the **Bookings** tab, **Customer photos** controls the booking flow: **Don't ask**, **Optional**, or **Required**.
 
 ### Availability
 
@@ -77,15 +120,15 @@ Customer: **Request received**, **Booking confirmed**, **Appointment reminder**,
 
 SMS (when enabled): booking confirmed / cancelled, appointment reminder, status updated.
 
-Set notification email, reply-to, and email theme (logo, colours, footer).
+Set notification email and **Reply-to email**. Under **Email appearance**, click **Open Emails** to brand concierge and purchased-return mail — see [Emails](/merchants/emails). Try complete-order emails stay Mirra-branded.
 
 ### Customer visibility
 
-On **Settings**, turn on **Visible to customers** when you are ready. While it is off, copy is **Setup only — customers cannot see or book Concierge yet.**
+On **Settings**, turn on **Visible to customers** when you are ready.
 
 <CardGroup cols={2}>
-  <Card title="Klaviyo concierge events" icon="envelope" href="/merchants/klaviyo">
-    Metric names for booking Flows.
+  <Card title="Emails" icon="envelope" href="/merchants/emails">
+    Brand concierge and purchased-return emails.
   </Card>
   <Card title="Shopper booking flow" icon="calendar" href="/shoppers/customer-portal">
     Product-page booking, plus book / reschedule / cancel after delivery.
