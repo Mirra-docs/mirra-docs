@@ -42,7 +42,7 @@ Select an order, then **More actions**:
 | **Authorize Payment** | Retry authorization — including when a hold is already on the card but the amount is short |
 | **Capture Payment** | Capture now |
 | **Void Authorization** | Release the hold |
-| **Cancel order** | Cancel an **unfulfilled** try order (and any purchased lines on the same checkout) |
+| **Retry Shippo Label** | Recreate a failed or replaced US return label |
 | **Mark Order as Complete** | Stop Mirra automation on this order |
 
 Click **Upload Return Label** on a badge to open **Add Tracking**. Click an **Available** restock badge to open **Restock Items**.
@@ -59,7 +59,7 @@ Use **Set Payment Due Date** when a shopper needs more time. In the last 24 hour
 
 ### Cancel before the order ships
 
-If the shopper wants to cancel before fulfilment, open the order in Mirra, click **More actions → Cancel order**, and confirm. Do not use a Shopify refund as a stand-in — that leaves the try hold in place.
+If the shopper wants to cancel before fulfilment, open the order in **Shopify** and click **Cancel order**. Do not use a Shopify refund as a stand-in — that leaves the try hold in place. Mirra then shows **Cancelled** and releases the hold.
 
 On a mixed cart, purchased lines are refunded and try lines release the hold. You cannot change the card on an existing order. Cancel it and ask the shopper to place a new one.
 
@@ -73,10 +73,15 @@ Payment statuses you may see on **Try Orders**:
 
 | Status | What it means |
 | --- | --- |
-| **Due** | Capture is next. Wait until the order is **delivered** — capturing earlier charges them before the trial starts. |
-| **Return in progress** | A return is open. If it is overdue, Mirra emails and texts the shopper. |
-| **Expiring** / **Expired** | The bank hold is near or past its usual window (often about 7 days). Mirra retries the hold when funds are available. |
-| **Partially paid** | Some of the balance is collected. Mirra keeps retrying the rest. |
+| **Authorized** | Card hold is in place. Fulfil these. Wait until the order is **delivered** before **Capture Payment**. |
+| **Pending** | Payment has not completed. Do not fulfil. |
+| **Partially Paid** | Some of the balance is collected. |
+| **Paid** | Payment is captured. |
+| **Expired** | The hold failed or ran out. Do not fulfil. |
+| **Voided** / **Cancelled** | The hold is released or the order is cancelled. |
+| **Payment Pending Restock** | Capture waits until the return is **Closed**. |
+| **Overdue** | The payment due date has passed. |
+| **Refund Owed** | A refund is still outstanding. |
 
 If the hold cannot be placed:
 
