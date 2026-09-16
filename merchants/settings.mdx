@@ -1,7 +1,7 @@
 ---
 title: "Try settings"
-description: "Set trial days, eligible products, return fees, and who can try — in Shopify Admin."
-keywords: ["settings", "trial days", "try products", "restocking fee"]
+description: "Set trial days, try item limits, return and exchange fees, and who can try — in Shopify Admin."
+keywords: ["settings", "trial days", "try products", "restocking fee", "exchange fee"]
 ---
 
 Configure try-before-you-buy in the Mirra app: **Settings**. Tabs are **General**, **Returns**, and **Advanced**. Click **Save Changes** when you are done, or **Discard Changes** to leave the form.
@@ -16,6 +16,10 @@ Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.
   </Step>
   <Step title="Limit how many items they can try">
     **Try Item Limit** sets **Minimum** and **Maximum** try items on a valid try order. Checkout blocks carts outside that range.
+
+    Under **Customer tag overrides**, click **Add tag override** to give signed-in customers with a matching Shopify customer tag a different **Maximum**. Enter the **Customer tag** (for example `loyalty`) and the **Maximum**. Guests and customers without a matching tag keep the default maximum. If more than one tag matches, checkout uses the highest maximum.
+
+    The first override asks Shopify for extra permissions so checkout can apply the tagged maximum. Click **Accept permissions**, approve in Shopify, then return here and add the override. Use **Remove tag override** to delete a row.
   </Step>
   <Step title="Choose try products">
     **Manage Try Products** — select products or collections shoppers can try. Prefer **Collections** so eligibility updates when a product meets or leaves your rules. Click **Manage Collections**, tick the collections, then **Select** and **Save Changes**.
@@ -38,13 +42,17 @@ Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.
 | **Customer-facing label** | Label shoppers see: **Restocking Fee** or **Return Shipping Fee** |
 | **Amount** | The fee — type any amount (it is not a fixed list). **Add a fee for another currency** if you sell in more than one |
 | **Free return order tag** | Exact Shopify order tag that waives the fee for that order |
-| **How should the fee be applied?** | **Order line item** or **Shopify return fee** |
-| **Use tiered return fees by item count** | Charge by how many items come back (for example first item free) |
+| **Apply fee as** | **Order line item** or **Shopify return fee** |
+| **Use tiered return fees by item count** | Charge by how many items come back (for example first item free). While tiers are on, the all/any charging rule and the separate exchange fee do not apply |
+| **Count exchanges toward the tier item count** | When tiers are on: include exchange units in the bracket. When off, only return units drive the fee |
 | **When is the fee charged?** | All try items returned, or any try items returned |
+| **Waive the fee on exchanges** | Tick to make exchanges free. Untick to charge an **Exchange fee amount** (per currency) on any submission that includes an exchange. When a return fee also applies, the shopper pays whichever is higher. Other waivers still apply. New shops default to charging the exchange fee |
 
 <Tip>
   Use a **Free return order tag** for VIP or marketing orders you do not want to charge a return fee on. In the portal those shoppers see **Free** on the return option and in the payment summary.
 </Tip>
+
+If you charge an exchange fee, the portal shows it in the payment summary when they submit. Shoppers do not get a deadline to finish the replacement to skip the fee. If you waive it, they see that deadline; if they cancel the unused exchange or miss the window, the restocking or return shipping fee is charged. Policy-level **Waive the return fee for exchange-only returns** still lives on [Return policies](/merchants/returns).
 
 ### Who can try
 
