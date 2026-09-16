@@ -18,15 +18,11 @@
     "default": "light"
   },
   "fonts": {
-    "family": "Open Sauce Sans",
-    "source": "/fonts/open-sauce-sans-latin-600-normal.woff2",
-    "format": "woff2",
-    "weight": 600,
+    "family": "Poppins",
+    "weight": 400,
     "heading": {
-      "family": "Open Sauce Sans",
-      "source": "/fonts/open-sauce-sans-latin-600-normal.woff2",
-      "format": "woff2",
-      "weight": 600
+      "family": "Poppins",
+      "weight": 400
     },
     "body": {
       "family": "Poppins",
