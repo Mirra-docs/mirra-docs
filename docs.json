@@ -43,38 +43,69 @@
     "eyebrows": "breadcrumbs"
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Get started",
-        "icon": "rocket",
-        "pages": ["index", "quickstart", "how-it-works", "faq"]
+        "tab": "Merchants",
+        "icon": "store",
+        "groups": [
+          {
+            "group": "Get started",
+            "icon": "rocket",
+            "pages": ["index", "quickstart", "how-it-works", "faq"]
+          },
+          {
+            "group": "Guides",
+            "icon": "book-open",
+            "pages": [
+              {
+                "group": "Setup",
+                "expanded": false,
+                "pages": [
+                  "merchants/settings",
+                  "merchants/storefront",
+                  "merchants/marketing-setup"
+                ]
+              },
+              {
+                "group": "Orders and returns",
+                "expanded": false,
+                "pages": [
+                  "merchants/try-orders",
+                  "merchants/returns",
+                  "merchants/return-shipping",
+                  "merchants/promotions"
+                ]
+              },
+              {
+                "group": "More",
+                "expanded": false,
+                "pages": [
+                  "merchants/analytics",
+                  "merchants/concierge",
+                  "merchants/emails"
+                ]
+              },
+              {
+                "group": "Integrations",
+                "expanded": false,
+                "pages": [
+                  "merchants/klaviyo",
+                  "merchants/mcp",
+                  "merchants/integrations"
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
-        "group": "For shoppers",
+        "tab": "Shoppers",
         "icon": "user",
         "pages": [
           "shoppers/place-a-try-order",
           "shoppers/customer-portal",
-          "shoppers/returns"
-        ]
-      },
-      {
-        "group": "For merchants",
-        "icon": "store",
-        "pages": [
-          "merchants/settings",
-          "merchants/storefront",
-          "merchants/marketing-setup",
-          "merchants/try-orders",
-          "merchants/returns",
-          "merchants/return-shipping",
-          "merchants/promotions",
-          "merchants/analytics",
-          "merchants/concierge",
-          "merchants/emails",
-          "merchants/klaviyo",
-          "merchants/mcp",
-          "merchants/integrations"
+          "shoppers/returns",
+          "shoppers/faq"
         ]
       }
     ],

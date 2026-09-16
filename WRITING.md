@@ -71,11 +71,22 @@ Never full-replace MDX to “refresh” the site. Never overwrite branding (`doc
 | --- | --- | --- |
 | `shoppers/` | Person who ordered from a brand | “You received a try order…” |
 | `merchants/` | Brand staff in Shopify Admin / Mirra dashboard | “In the dashboard, click…” |
-| Root (`quickstart`, `how-it-works`) | Merchants first; shoppers may still read lifecycle pages | Merchant “you”, with a clear shopper section when needed |
+| Root (`index`, `quickstart`, `how-it-works`, `faq`) | Merchants | Merchant “you”. Point shoppers at the **Shoppers** tab instead of mixing voices |
 
-Do not mix shopper portal copy and merchant setup on the same page unless the page is a lifecycle overview (`how-it-works`). Integrations and automations always live under `merchants/`.
+Do not mix shopper portal copy and merchant setup on the same page. `index.mdx` is the merchant landing. Shopper FAQ lives at `shoppers/faq.mdx`; merchant FAQ stays at `faq.mdx` (`/faq`). Integrations and automations always live under `merchants/`.
 
 Merchant pages may mention what shoppers will see (so the brand can set expectations). Shopper pages never mention Admin, MCP, Klaviyo, or dashboard settings.
+
+## Navigation: tabs and collapsible groups
+
+`docs.json` uses **tabs**, not one mixed sidebar:
+
+- **Merchants** is first (the default tab). Nested groups under **Guides** use `"expanded": false` so Setup, Orders and returns, More, and Integrations stay collapsed until opened.
+- **Shoppers** lists only shopper pages.
+
+If the guide grows, nest more groups (or collapse new folders with `expanded: false`) instead of listing every article in a flat sidebar. Top-level groups are always expanded in Mintlify — collapse only **nested** groups. Use `<Accordion>` / `<AccordionGroup>` for long on-page lists such as FAQ.
+
+Do not import the Help Center article catalogue into this sidebar. Merchant Shopify-app docs stay public. Direct URLs and site search can still find a page on the other tab.
 
 ## Voice
 
@@ -120,17 +131,18 @@ Then:
 2. Prerequisites if they must have something first.
 3. Numbered `<Steps>` for anything they click through.
 4. Tables for options, event names, or permissions.
-5. `<Note>`, `<Tip>`, `<Warning>`, `<Info>`, `<Check>` only when they add a real constraint.
-6. Links to the next job (`<Card>` / `<CardGroup>`), not a marketing outro.
+5. `<Note>`, `<Tip>`, `<Warning>`, `<Info>`, `<Check>` when they add a real constraint — especially Help Center-style callouts (see below).
+6. Screenshots in `<Frame>` and existing videos as embeds when the page replaces a Help Center article.
+7. Links to the next job (`<Card>` / `<CardGroup>`), not a marketing outro.
 
-Frontmatter `title` is required. Add the page to `docs.json` navigation or it will not show in the sidebar.
+Frontmatter `title` is required. Add the page to the matching tab in `docs.json` or it will not show in the sidebar.
 
 ## Mintlify mechanics
 
 - Files: kebab-case `.mdx`
 - Internal links: root-relative, no `.mdx` — `/merchants/klaviyo` not `../klaviyo.mdx`
 - Code blocks always have a language tag
-- Images in `images/` with alt text
+- Images in `images/` with alt text, wrapped in `<Frame caption="…">`
 - Prefer `<Steps>`, `<Tabs>`, `<Accordion>`, `<CardGroup>` over long prose
 - Do not add pages that are only API internals. Public integration contracts (Klaviyo metric names, MCP URL) **are** customer-facing — document those.
 
@@ -157,7 +169,19 @@ When the change is an integration:
 
 - Help Center: short setup articles merchants already use
 - This site: lifecycle, policies, integration reference, shopper portal language
-- Link out. Do not fork a second version of the same article unless you are replacing it on purpose
+- Link out. Do not fork a second version of the same article unless you are replacing it on purpose. Never copy HubSpot articles word for word.
+
+When a page **replaces** a Help Center article, keep the same *kinds* of formatting — not HubSpot’s CSS or chrome (`style.css` and logos stay as they are):
+
+| Help Center | Mintlify |
+| --- | --- |
+| Light-blue 💡 info / support box | `<Info>` or `<Tip>` |
+| Caution / “keep in mind” | `<Warning>` or `<Note>` |
+| Numbered steps | `<Steps>` |
+| Screenshots of Admin or the portal | Save under `images/`, alt text, wrap in `<Frame>` |
+| Loom / YouTube / HubSpot video already on the article | Embed the existing URL in an iframe inside `<Frame>` — do not host new video files |
+
+Reuse Help Center screenshots when they still match the live UI. Recapture from Shopify Admin or the customer portal if the screen has changed. Customer-visible UI only.
 
 ## What never ships
 
@@ -178,8 +202,9 @@ Checklist before you open the PR:
 
 - [ ] Every page is a customer interaction (Shopify Admin / returns dashboard, or customer portal)
 - [ ] No internal workings, secret sauce, or “how the code does it”
-- [ ] Shopper copy and merchant copy are in the right folders
-- [ ] New pages are in `docs.json`
+- [ ] Shopper copy and merchant copy are in the right folders and tabs
+- [ ] New pages are in the matching `docs.json` tab; new merchant folders use nested `expanded: false` groups
+- [ ] Replacement pages use callouts, `<Frame>` screenshots, and existing video embeds where the Help Center article had them
 - [ ] Terms match the table above
 - [ ] No fraud, billing, or infra
 - [ ] Diff-only change; branding files untouched

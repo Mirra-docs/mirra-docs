@@ -6,16 +6,32 @@ keywords: ["settings", "trial days", "try products", "restocking fee", "exchange
 
 Configure try-before-you-buy in the Mirra app: **Settings**. Tabs are **General**, **Returns**, and **Advanced**. Click **Save Changes** when you are done, or **Discard Changes** to leave the form.
 
-Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.trywithmirra.com/knowledge-base/getting-started).
+Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.trywithmirra.com/knowledge-base/configure-settings).
+
+<Frame caption="Settings opens on **General**. Switch to **Returns** for return reasons and labels. **Advanced** is a third tab for cancellation and capture.">
+  <img src="/images/settings-returns-tab.png" alt="Settings page tabs for General and Returns" />
+</Frame>
 
 ## General
 
 <Steps>
   <Step title="Set the trial window">
     Under **Trial days**, enter how many days shoppers have after **delivery**. If they do not complete the order in time, remaining items are charged as kept.
+
+    <Frame caption="Trial days start when the order is delivered, not at checkout.">
+      <img src="/images/settings-trial-days.png" alt="Trial days setting with a reminder that remaining items are charged if the shopper does not complete the order" />
+    </Frame>
+
+    <Info>
+      Mirra reminds shoppers before the trial ends. If they still do not complete the order, remaining items are charged as kept.
+    </Info>
   </Step>
   <Step title="Limit how many items they can try">
     **Try Item Limit** sets **Minimum** and **Maximum** try items on a valid try order. Checkout blocks carts outside that range.
+
+    <Frame caption="Default minimum and maximum. **Customer tag overrides** sit under this section.">
+      <img src="/images/settings-try-item-limit.png" alt="Try Item Limit with minimum 1 and maximum 4" />
+    </Frame>
 
     Under **Customer tag overrides**, click **Add tag override** to give signed-in customers with a matching Shopify customer tag a different **Maximum**. Enter the **Customer tag** (for example `loyalty`) and the **Maximum**. Guests and customers without a matching tag keep the default maximum. If more than one tag matches, checkout uses the highest maximum.
 
@@ -24,12 +40,22 @@ Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.
   <Step title="Choose try products">
     **Manage Try Products** — select products or collections shoppers can try. Prefer **Collections** so eligibility updates when a product meets or leaves your rules. Click **Manage Collections**, tick the collections, then **Select** and **Save Changes**.
 
-    Leave gift cards, shipping protection, and other non-physical SKUs out of try. Exclude pre-order or final-sale products if those should not be tryable.
+    <Frame caption="Pick collections in **Manage Collections**, then **Select**.">
+      <img src="/images/settings-manage-try-products.png" alt="Select collections dialog with a Try Before You Buy collection ticked" />
+    </Frame>
+
+    <Tip>
+      Collections are easier to keep in sync than a product list. Leave gift cards, shipping protection, and other non-physical SKUs out of try. Exclude pre-order or final-sale products if those should not be tryable.
+    </Tip>
 
     For a smart collection, Shopify treats a **compare-at price** of empty and **\$0.00** as different values. Use empty (greyed-out \$0.00 in Shopify) for full-price items, or add a second collection that catches the other case. Click-by-click: [Setting up a Try Before You Buy product collection](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-a-tbyb-collection).
   </Step>
   <Step title="Choose countries">
     **Country Selection** limits where try is offered. Return shipping is configured per country on the Returns tab.
+
+    <Frame>
+      <img src="/images/settings-country-selection.png" alt="Country Selection search with Australia selected" />
+    </Frame>
   </Step>
 </Steps>
 
@@ -58,22 +84,38 @@ If you charge an exchange fee, the portal shows it in the payment summary when t
 
 **VIP and Customer Segment control** limits who sees try on the storefront.
 
+<Frame caption="Leave both options off unless you are running a limited launch.">
+  <img src="/images/settings-restrict-access.png" alt="Restrict Customer Access with Customer tag access and URL access set to Off" />
+</Frame>
+
 **Customer tag access** — **Enable** and set a **Required customer tag**. Only signed-in customers with that tag see try. Leave the tag blank to use **Try with Mirra**. **Disable** if every customer can try without signing in.
 
 **URL access** — **Enable** to share a storefront link that lets people try without signing in or holding the tag. Paste a page on your shop under **Create a shareable URL**, then copy the **Shareable link**. **Disable** if shoppers do not need a special URL.
+
+<Tip>
+  Keep restricted access off unless you have a reason — for example a soft launch to VIP customers.
+</Tip>
 
 ### Portal and alerts
 
 | Setting | What it does |
 | --- | --- |
-| **Add your logo** | Logo shown in the customer portal |
+| **Add your logo** | Logo shown in the customer portal. Square logos work best |
 | **Customer Care Instructions** | Copy shoppers see before they try items. Use **Reset to Default** to restore Mirra’s text |
 | **Notification Email** | Inbox for business alerts (orders, cancellations, and similar) |
 | **Customer reply-to email** | Where **Reply** on a Try with Mirra order email goes. Also under **Settings → General** in the dashboard as **Reply-to address**. Leave blank to keep [support@trywithmirra.com](mailto:support@trywithmirra.com). This is not the notification inbox or the concierge reply-to |
 
+<Frame>
+  <img src="/images/settings-notification-email.png" alt="Notification Email field set to support@trywithmirra.com" />
+</Frame>
+
 ## Returns
 
 On the **Returns** tab:
+
+<Frame caption="**Manage return reasons** controls what shoppers pick in the portal. Click **Add Reason** to add one.">
+  <img src="/images/settings-return-reasons.png" alt="Manage Return Reasons list with Add Reason and default reasons marked Active" />
+</Frame>
 
 - **Try order exchanges** — turn on **Offer exchange on try orders**, set **Exchange checkout window (hours)** (the portal uses this window for the deadline shoppers see), and **Grant permissions** if Shopify asks
 - **Purchased item returns** — optional **Returns portal URL** and **Message shown to customers** for items Mirra does not manage (for example Loop or ReturnGO). Shoppers see that message under **Items that are already yours**, plus **Start a return** when you set a URL. Keep try completions in Mirra — see [Other returns portals](/merchants/returns#other-returns-portals)
