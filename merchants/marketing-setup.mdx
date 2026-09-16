@@ -4,7 +4,13 @@ description: "Use the in-app marketing checklist to launch try-before-you-buy on
 keywords: ["marketing", "homepage", "how it works", "launch"]
 ---
 
-**Marketing Setup** in the Mirra app is a launch checklist. Complete the steps as you publish homepage copy, a how-it-works page, and launch emails. Templates live in the [Help Center](https://helpcenter.trywithmirra.com/knowledge-base).
+import { HelpCenter } from "/snippets/help-center.jsx";
+
+**Marketing Setup** in the Mirra app is a launch checklist. Complete the steps as you publish homepage copy, a how-it-works page, and launch emails.
+
+<HelpCenter>
+  Templates live in the [Help Center](https://helpcenter.trywithmirra.com/knowledge-base).
+</HelpCenter>
 
 ## Open the checklist
 
@@ -36,7 +42,9 @@ In the Mirra app, go to **Marketing Setup**. Mark each step done as you finish i
   <Card title="Storefront" icon="palette" href="/merchants/storefront">
     App embed, product button, and cart blocks.
   </Card>
-  <Card title="Help Center" icon="life-ring" href="https://helpcenter.trywithmirra.com/knowledge-base">
-    Short setup articles and downloadable templates.
-  </Card>
+  <HelpCenter>
+    <Card title="Help Center" icon="life-ring" href="https://helpcenter.trywithmirra.com/knowledge-base">
+      Short setup articles and downloadable templates.
+    </Card>
+  </HelpCenter>
 </CardGroup>

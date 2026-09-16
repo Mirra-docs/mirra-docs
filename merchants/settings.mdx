@@ -4,9 +4,13 @@ description: "Set trial days, try item limits, return and exchange fees, and who
 keywords: ["settings", "trial days", "try products", "restocking fee", "exchange fee"]
 ---
 
+import { HelpCenter } from "/snippets/help-center.jsx";
+
 Configure try-before-you-buy in the Mirra app: **Settings**. Tabs are **General**, **Returns**, and **Advanced**. Click **Save Changes** when you are done, or **Discard Changes** to leave the form.
 
-Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.trywithmirra.com/knowledge-base/configure-settings).
+<HelpCenter>
+  Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.trywithmirra.com/knowledge-base/configure-settings).
+</HelpCenter>
 
 <Frame caption="Settings opens on **General**. Switch to **Returns** for return reasons and labels. **Advanced** is a third tab for cancellation and capture.">
   <img src="/images/settings-returns-tab.png" alt="Settings page tabs for General and Returns" />
@@ -48,7 +52,11 @@ Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.
       Collections are easier to keep in sync than a product list. Leave gift cards, shipping protection, and other non-physical SKUs out of try. Exclude pre-order or final-sale products if those should not be tryable.
     </Tip>
 
-    For a smart collection, Shopify treats a **compare-at price** of empty and **\$0.00** as different values. Use empty (greyed-out \$0.00 in Shopify) for full-price items, or add a second collection that catches the other case. Click-by-click: [Setting up a Try Before You Buy product collection](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-a-tbyb-collection).
+    For a smart collection, Shopify treats a **compare-at price** of empty and **\$0.00** as different values. Use empty (greyed-out \$0.00 in Shopify) for full-price items, or add a second collection that catches the other case.
+
+    <HelpCenter>
+      Click-by-click: [Setting up a Try Before You Buy product collection](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-a-tbyb-collection).
+    </HelpCenter>
   </Step>
   <Step title="Choose countries">
     **Country Selection** limits where try is offered. Return shipping is configured per country on the Returns tab.

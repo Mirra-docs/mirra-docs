@@ -4,6 +4,8 @@ description: "Send Mirra transactional emails from Klaviyo Flows using delegated
 keywords: ["Klaviyo", "email", "flows", "events"]
 ---
 
+import { HelpCenter } from "/snippets/help-center.jsx";
+
 Mirra sends transactional emails for the try journey (order confirmation, delivery, trial reminder, portal link, payment, and return or exchange updates) unless you hand a notification type to Klaviyo.
 
 Try complete-order emails stay Mirra-branded. You cannot edit those templates in the app — email [support@trywithmirra.com](mailto:support@trywithmirra.com) to change colours (background, text, button, footer). The Mirra header logo stays.
@@ -16,7 +18,9 @@ Connect Klaviyo on **Integrations**, then use **Choose emails to send via Klaviy
 
 Utility emails that are not in this list (for example one-off portal login codes) are not delegatable.
 
-Help Center: [Klaviyo email delegation](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-klaviyo-email-delegation), [Customizing transactional email templates](https://helpcenter.trywithmirra.com/knowledge-base/customizing-your-transactional-email-templates).
+<HelpCenter>
+  Help Center: [Klaviyo email delegation](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-klaviyo-email-delegation), [Customizing transactional email templates](https://helpcenter.trywithmirra.com/knowledge-base/customizing-your-transactional-email-templates).
+</HelpCenter>
 
 ## Properties on every order event
 

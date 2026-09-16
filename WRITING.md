@@ -30,7 +30,7 @@ Publish docs that a customer can finish a job with:
 
 Support teams reuse the same pages. There is no third voice for “ops” or “engineering.”
 
-Short HubSpot Help Center articles still exist. This site is the deeper product guide. Link to the Help Center when a short how-to already lives there; do not duplicate it word for word.
+Short HubSpot Help Center articles still exist. This site is the deeper product guide. Link to the Help Center when a short how-to already lives there; do not duplicate it word for word. Wrap those links in `<HelpCenter>` from `snippets/help-center.jsx` so they can be turned off in one place when HubSpot is retired (`SHOW_HELP_CENTER_LINKS`). Also remove the Help Center nav anchor in `docs.json` at that time.
 
 ## Audience test (must pass)
 
@@ -171,7 +171,7 @@ When the change is an integration:
 - This site: lifecycle, policies, integration reference, shopper portal language
 - Link out. Do not fork a second version of the same article unless you are replacing it on purpose. Never copy HubSpot articles word for word.
 
-When a page **replaces** a Help Center article, keep the same *kinds* of formatting — not HubSpot’s CSS or chrome (`style.css` and logos stay as they are):
+When a page **replaces** a Help Center article, keep the same *kinds* of formatting. Site chrome (navbar cyan `#57e5f8`, Poppins, heading sizes) lives in `docs.json` and `style.css` so it tracks the Help Center; do not restyle those files as a side effect of a content-only PR:
 
 | Help Center | Mintlify |
 | --- | --- |
