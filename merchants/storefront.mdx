@@ -4,9 +4,17 @@ description: "Turn on the theme embed, product button, cart blocks, and checkout
 keywords: ["theme", "app embed", "Try Before You Buy", "checkout", "shipping"]
 ---
 
+import { HelpCenter } from "/snippets/help-center.jsx";
+
 Shoppers start a try order from your storefront. You enable that in the Shopify theme editor, then finish **Select Settings & Preferences** in **Onboarding**.
 
-Short placement how-tos: [Customise your Mirra storefront](https://helpcenter.trywithmirra.com/knowledge-base/merchant-guides).
+<HelpCenter>
+  Short placement how-tos: [Customise your Mirra storefront](https://helpcenter.trywithmirra.com/knowledge-base/merchant-guides). Click-by-click onboarding videos: [Complete in-app onboarding](https://helpcenter.trywithmirra.com/knowledge-base/complete-in-app-onboarding).
+</HelpCenter>
+
+<Frame caption="Complete **Turn On App Embed** and **Add Button to Product Pages** in **Onboarding** before you go live.">
+  <img src="/images/storefront-onboarding.png" alt="Try with Mirra Onboarding with Turn On App Embed, Add Button to Product Pages, and Select Settings and Preferences marked complete" />
+</Frame>
 
 ## Turn on the app embed
 
@@ -16,13 +24,35 @@ Short placement how-tos: [Customise your Mirra storefront](https://helpcenter.tr
   </Step>
   <Step title="Enable Try with Mirra">
     In the theme editor, turn on the **Try with Mirra** app embed (it sits on the page body). This drives the how-it-works modal, cart banner, and add-to-cart behaviour.
+
+    <Frame caption="Turn on the app embed in the theme editor.">
+      <iframe
+        src="https://play-ap1.hubspotvideo.com/v/44476936/id/192672733230"
+        title="Turn on the Try with Mirra app embed"
+        className="w-full aspect-video rounded-xl"
+        allow="autoplay; fullscreen"
+        allowFullScreen
+      ></iframe>
+    </Frame>
   </Step>
   <Step title="Add the product button">
     Complete **Add Button to Product Pages**. Add the **Try with Mirra Button** block on your product template.
+
+    <Frame caption="Add the Try with Mirra button on product pages.">
+      <iframe
+        src="https://play-ap1.hubspotvideo.com/v/44476936/id/192672733236"
+        title="Add the Try with Mirra button to product pages"
+        className="w-full aspect-video rounded-xl"
+        allow="autoplay; fullscreen"
+        allowFullScreen
+      ></iframe>
+    </Frame>
   </Step>
 </Steps>
 
-Until you click **Go Live**, changes stay in **Preview mode**.
+<Info>
+  Until you click **Go Live**, changes stay in **Preview mode**.
+</Info>
 
 ## Theme blocks
 
@@ -58,7 +88,11 @@ App embed settings you can change:
   Cart toggle copy: **Try Before You Buy all eligible items**. Shoppers can mix try and buy in one checkout when some lines are not try-eligible.
 </Note>
 
-To hide or disable try on some variants (for example pre-order), use the Help Center theme snippets — [Disable Try with Mirra on specified variants](https://helpcenter.trywithmirra.com/knowledge-base/disable-try-with-mirra-for-pre-order-or-specific-variants) — rather than removing the whole product from **Manage Try Products**.
+To hide or disable try on some variants (for example pre-order), use theme snippets rather than removing the whole product from **Manage Try Products**.
+
+<HelpCenter>
+  [Disable Try with Mirra on specified variants](https://helpcenter.trywithmirra.com/knowledge-base/disable-try-with-mirra-for-pre-order-or-specific-variants)
+</HelpCenter>
 
 ## Checkout
 
@@ -68,7 +102,7 @@ On try checkouts, shoppers may see:
 
 - **Click to Try Before You Buy** on a line
 - A card-authorization checkbox: they must accept that the card will be authorised for the total shown
-- Min/max try item errors from your **Try Item Limit**
+- Min/max try item errors from your **Try Item Limit** (signed-in customers with a [tag override](/merchants/settings) can have a higher maximum)
 - A phone number requirement if your store needs it for the portal
 - Deferred-payment labels such as **Total due after trial (if kept)** or **Due after trial (if kept)** — if you have updated Shopify theme checkout language
 
@@ -85,13 +119,29 @@ This is Shopify checkout behaviour. Shoppers pay for shipping either way — inc
 
 A gift, a shipping-protection add-on (for example Route), or a normal purchase in the same cart is not a try line, so shipping is charged at checkout. Click & Collect does not waive outbound shipping: shoppers are still charged for it when they finish in the portal.
 
-To set a flat try shipping rate, create a custom rate named **Try with Mirra** in **Shopify Admin → Settings → Shipping and delivery**. Click-by-click: [Custom shipping rate for TBYB orders](https://helpcenter.trywithmirra.com/knowledge-base/custom-shipping-rate-for-tbyb-orders).
+On a try-only cart, your Shopify free-shipping threshold still applies. If the order is under that amount, the usual shipping rate is added to the hold and charged when they finish.
+
+To set a flat try shipping rate, create a custom rate named **Try with Mirra** in **Shopify Admin → Settings → Shipping and delivery**.
+
+<HelpCenter>
+  Click-by-click: [Custom shipping rate for TBYB orders](https://helpcenter.trywithmirra.com/knowledge-base/custom-shipping-rate-for-tbyb-orders).
+</HelpCenter>
 
 ### Checkout and cart wording
 
-Recommended Shopify checkout strings (deferred due date, buyer consent, and similar) are in [Recommended Shopify settings](https://helpcenter.trywithmirra.com/knowledge-base/recommended-shopify-settings). Require email and a shipping-address phone number there so portal login and SMS can reach the shopper.
+<HelpCenter>
+  Recommended Shopify checkout strings (deferred due date, buyer consent, and similar) are in [Recommended Shopify settings](https://helpcenter.trywithmirra.com/knowledge-base/recommended-shopify-settings). Require email and a shipping-address phone number there so portal login and SMS can reach the shopper.
+</HelpCenter>
 
-The cart can still show the full product price even when checkout charges \$0 today. Optional theme edits for **Due Today** line prices and subtotals: [Displaying Due Today prices](https://helpcenter.trywithmirra.com/knowledge-base/displaying-due-today-prices-in-your-shopify-cart).
+The cart can still show the full product price even when checkout charges \$0 today.
+
+<Frame caption="A try line can list the product price and still show **\$0 at checkout**.">
+  <img src="/images/storefront-cart-line-items.png" alt="Cart line for a try item showing the product price and $0 at checkout" />
+</Frame>
+
+<HelpCenter>
+  Optional theme edits for **Due Today** line prices and subtotals: [Displaying Due Today prices](https://helpcenter.trywithmirra.com/knowledge-base/displaying-due-today-prices-in-your-shopify-cart).
+</HelpCenter>
 
 ## Order status page
 

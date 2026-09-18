@@ -4,6 +4,8 @@ description: "Connect return-label providers, grant optional Shopify permissions
 keywords: ["integrations", "Starshipit", "Shippo", "optional permissions", "exchanges"]
 ---
 
+import { HelpCenter } from "/snippets/help-center.jsx";
+
 Open **Integrations** in the Mirra app. Connect the tools you use for labels and extra Shopify access. [Klaviyo](/merchants/klaviyo) and [MCP](/merchants/mcp) have their own pages.
 
 ## Optional Shopify permissions
@@ -20,7 +22,7 @@ Connect a provider before you select its method in [Return shipping](/merchants/
 
 | Card | Merchant actions |
 | --- | --- |
-| **Australia Post** | **Enable Integration** / **Disable Integration** for eParcel return labels. **Using Mirra's eParcel** means labels are generated on Mirra’s account — no credentials needed on this card |
+| **Australia Post** | **Turn on** / **Turn off** for eParcel return labels. Enter **Account Number**, **API Key**, and **API Secret**, then click **Test connection**. A 7-digit eParcel account is padded to 10 digits; an 8-digit StarTrack account is left as entered. Success shows **Australia Post connection succeeded**. **Using Mirra's eParcel** means labels are generated on Mirra’s account — no credentials needed on this card |
 | **Starshipit** | API key, **Return Addresses**, and carrier (Australia Post, Aramex, UPS, FedEx, USPS, Royal Mail, DHL, and others listed in the form) |
 | **Royal Mail** | API for UK return labels |
 | **Shippo** | USA labels — **General Settings**, **Default Package Settings**, **Return Addresses**. Click **Check product weights** (samples up to 20 try products) before you enable. Return labels use Shopify variant weights. If products have no weight, add weights in Shopify and check again, or tick **I accept the risk that customers may have issues at the post office** to enable anyway. |
@@ -41,9 +43,18 @@ Connect a provider before you select its method in [Return shipping](/merchants/
   </Step>
 </Steps>
 
-<Note>
-  Other fulfillment tools you already use (for example your 3PL) are not configured on this screen. Keep those in Shopify or the provider’s own admin. Tell the warehouse to ship Shopify orders that are **Authorized** and tagged **Try with Mirra**, and to skip **Failed to authorize payment** / **On hold**. See [Try orders](/merchants/try-orders#authorization-and-fulfillment).
-</Note>
+## Warehouse and ERP
+
+These tools are not configured on this screen. Keep them in Shopify or the provider’s admin. Ship only Shopify orders that are **Authorized** and tagged **Try with Mirra**. Skip **Failed to authorize payment** / **On hold**. See [Try orders](/merchants/try-orders#authorization-and-fulfillment).
+
+| System | What to do |
+| --- | --- |
+| **Cin7 Omni** | Import only **Authorised** and **Paid** Shopify orders. Send Mirra an API key, or invite [support@trywithmirra.com](mailto:support@trywithmirra.com) as a user. |
+| **Apparel21** | Keep your existing Shopify connector for purchased orders and skip **Try with Mirra** tags. Mirra writes try orders into Apparel21 as a normal sale, then a refund if items come back. Fulfil them like other web orders. |
+
+<HelpCenter>
+  Click-by-click: [Cin7 Omni](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-your-cin7-omni-integration) and [Apparel21](https://helpcenter.trywithmirra.com/knowledge-base/how-try-with-mirra-works-with-apparel21).
+</HelpCenter>
 
 ## Other returns portals
 

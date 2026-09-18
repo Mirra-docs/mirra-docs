@@ -1,31 +1,69 @@
 ---
 title: "Try settings"
-description: "Set trial days, eligible products, return fees, and who can try — in Shopify Admin."
-keywords: ["settings", "trial days", "try products", "restocking fee"]
+description: "Set trial days, try item limits, return and exchange fees, and who can try — in Shopify Admin."
+keywords: ["settings", "trial days", "try products", "restocking fee", "exchange fee"]
 ---
+
+import { HelpCenter } from "/snippets/help-center.jsx";
 
 Configure try-before-you-buy in the Mirra app: **Settings**. Tabs are **General**, **Returns**, and **Advanced**. Click **Save Changes** when you are done, or **Discard Changes** to leave the form.
 
-Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.trywithmirra.com/knowledge-base/getting-started).
+<HelpCenter>
+  Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.trywithmirra.com/knowledge-base/configure-settings).
+</HelpCenter>
+
+<Frame caption="Settings opens on **General**. Switch to **Returns** for return reasons and labels. **Advanced** is a third tab for cancellation and capture.">
+  <img src="/images/settings-returns-tab.png" alt="Settings page tabs for General and Returns" />
+</Frame>
 
 ## General
 
 <Steps>
   <Step title="Set the trial window">
     Under **Trial days**, enter how many days shoppers have after **delivery**. If they do not complete the order in time, remaining items are charged as kept.
+
+    <Frame caption="Trial days start when the order is delivered, not at checkout.">
+      <img src="/images/settings-trial-days.png" alt="Trial days setting with a reminder that remaining items are charged if the shopper does not complete the order" />
+    </Frame>
+
+    <Info>
+      Mirra reminds shoppers before the trial ends. If they still do not complete the order, remaining items are charged as kept.
+    </Info>
   </Step>
   <Step title="Limit how many items they can try">
     **Try Item Limit** sets **Minimum** and **Maximum** try items on a valid try order. Checkout blocks carts outside that range.
+
+    <Frame caption="Default minimum and maximum. **Customer tag overrides** sit under this section.">
+      <img src="/images/settings-try-item-limit.png" alt="Try Item Limit with minimum 1 and maximum 4" />
+    </Frame>
+
+    Under **Customer tag overrides**, click **Add tag override** to give signed-in customers with a matching Shopify customer tag a different **Maximum**. Enter the **Customer tag** (for example `loyalty`) and the **Maximum**. Guests and customers without a matching tag keep the default maximum. If more than one tag matches, checkout uses the highest maximum.
+
+    The first override asks Shopify for extra permissions so checkout can apply the tagged maximum. Click **Accept permissions**, approve in Shopify, then return here and add the override. Use **Remove tag override** to delete a row.
   </Step>
   <Step title="Choose try products">
     **Manage Try Products** — select products or collections shoppers can try. Prefer **Collections** so eligibility updates when a product meets or leaves your rules. Click **Manage Collections**, tick the collections, then **Select** and **Save Changes**.
 
-    Leave gift cards, shipping protection, and other non-physical SKUs out of try. Exclude pre-order or final-sale products if those should not be tryable.
+    <Frame caption="Pick collections in **Manage Collections**, then **Select**.">
+      <img src="/images/settings-manage-try-products.png" alt="Select collections dialog with a Try Before You Buy collection ticked" />
+    </Frame>
 
-    For a smart collection, Shopify treats a **compare-at price** of empty and **\$0.00** as different values. Use empty (greyed-out \$0.00 in Shopify) for full-price items, or add a second collection that catches the other case. Click-by-click: [Setting up a Try Before You Buy product collection](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-a-tbyb-collection).
+    <Tip>
+      Collections are easier to keep in sync than a product list. Leave gift cards, shipping protection, and other non-physical SKUs out of try. Exclude pre-order or final-sale products if those should not be tryable.
+    </Tip>
+
+    For a smart collection, Shopify treats a **compare-at price** of empty and **\$0.00** as different values. Use empty (greyed-out \$0.00 in Shopify) for full-price items, or add a second collection that catches the other case.
+
+    <HelpCenter>
+      Click-by-click: [Setting up a Try Before You Buy product collection](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-a-tbyb-collection).
+    </HelpCenter>
   </Step>
   <Step title="Choose countries">
     **Country Selection** limits where try is offered. Return shipping is configured per country on the Returns tab.
+
+    <Frame>
+      <img src="/images/settings-country-selection.png" alt="Country Selection search with Australia selected" />
+    </Frame>
   </Step>
 </Steps>
 
@@ -38,34 +76,54 @@ Help Center walkthrough: [Configure Try with Mirra Settings](https://helpcenter.
 | **Customer-facing label** | Label shoppers see: **Restocking Fee** or **Return Shipping Fee** |
 | **Amount** | The fee — type any amount (it is not a fixed list). **Add a fee for another currency** if you sell in more than one |
 | **Free return order tag** | Exact Shopify order tag that waives the fee for that order |
-| **How should the fee be applied?** | **Order line item** or **Shopify return fee** |
-| **Use tiered return fees by item count** | Charge by how many items come back (for example first item free) |
+| **Apply fee as** | **Order line item** or **Shopify return fee** |
+| **Use tiered return fees by item count** | Charge by how many items come back (for example first item free). While tiers are on, the all/any charging rule and the separate exchange fee do not apply |
+| **Count exchanges toward the tier item count** | When tiers are on: include exchange units in the bracket. When off, only return units drive the fee |
 | **When is the fee charged?** | All try items returned, or any try items returned |
+| **Waive the fee on exchanges** | Tick to make exchanges free. Untick to charge an **Exchange fee amount** (per currency) on any submission that includes an exchange. When a return fee also applies, the shopper pays whichever is higher. Other waivers still apply. New shops default to charging the exchange fee |
 
 <Tip>
   Use a **Free return order tag** for VIP or marketing orders you do not want to charge a return fee on. In the portal those shoppers see **Free** on the return option and in the payment summary.
 </Tip>
 
+If you charge an exchange fee, the portal shows it in the payment summary when they submit. Shoppers do not get a deadline to finish the replacement to skip the fee. If you waive it, they see that deadline; if they cancel the unused exchange or miss the window, the restocking or return shipping fee is charged. Policy-level **Waive the return fee for exchange-only returns** still lives on [Return policies](/merchants/returns).
+
 ### Who can try
 
 **VIP and Customer Segment control** limits who sees try on the storefront.
+
+<Frame caption="Leave both options off unless you are running a limited launch.">
+  <img src="/images/settings-restrict-access.png" alt="Restrict Customer Access with Customer tag access and URL access set to Off" />
+</Frame>
 
 **Customer tag access** — **Enable** and set a **Required customer tag**. Only signed-in customers with that tag see try. Leave the tag blank to use **Try with Mirra**. **Disable** if every customer can try without signing in.
 
 **URL access** — **Enable** to share a storefront link that lets people try without signing in or holding the tag. Paste a page on your shop under **Create a shareable URL**, then copy the **Shareable link**. **Disable** if shoppers do not need a special URL.
 
+<Tip>
+  Keep restricted access off unless you have a reason — for example a soft launch to VIP customers.
+</Tip>
+
 ### Portal and alerts
 
 | Setting | What it does |
 | --- | --- |
-| **Add your logo** | Logo shown in the customer portal |
+| **Add your logo** | Logo shown in the customer portal. Square logos work best |
 | **Customer Care Instructions** | Copy shoppers see before they try items. Use **Reset to Default** to restore Mirra’s text |
 | **Notification Email** | Inbox for business alerts (orders, cancellations, and similar) |
 | **Customer reply-to email** | Where **Reply** on a Try with Mirra order email goes. Also under **Settings → General** in the dashboard as **Reply-to address**. Leave blank to keep [support@trywithmirra.com](mailto:support@trywithmirra.com). This is not the notification inbox or the concierge reply-to |
 
+<Frame>
+  <img src="/images/settings-notification-email.png" alt="Notification Email field set to support@trywithmirra.com" />
+</Frame>
+
 ## Returns
 
 On the **Returns** tab:
+
+<Frame caption="**Manage return reasons** controls what shoppers pick in the portal. Click **Add Reason** to add one.">
+  <img src="/images/settings-return-reasons.png" alt="Manage Return Reasons list with Add Reason and default reasons marked Active" />
+</Frame>
 
 - **Try order exchanges** — turn on **Offer exchange on try orders**, set **Exchange checkout window (hours)** (the portal uses this window for the deadline shoppers see), and **Grant permissions** if Shopify asks
 - **Purchased item returns** — optional **Returns portal URL** and **Message shown to customers** for items Mirra does not manage (for example Loop or ReturnGO). Shoppers see that message under **Items that are already yours**, plus **Start a return** when you set a URL. Keep try completions in Mirra — see [Other returns portals](/merchants/returns#other-returns-portals)
@@ -76,7 +134,7 @@ On the **Returns** tab:
 
 Use **Advanced** for cancellation and capture behaviour:
 
-- **Cancel order when authorization fails** — if a card hold cannot be placed, Mirra retries for about **12 hours**, then cancels the Shopify order when this is on. Leave it on unless you want staff to cancel those orders themselves. What appears on the Shopify order: [Try orders](/merchants/try-orders#authorization-and-fulfillment)
+- **Cancel order when authorization fails** — if a card hold cannot be placed, Mirra retries for about **12 hours**, then cancels the Shopify order when this is on. Leave it on unless you want staff to cancel those orders themselves. After a hold is in place, Mirra also refreshes it about **24 hours** before it expires. What appears on the Shopify order: [Try orders](/merchants/try-orders#authorization-and-fulfillment)
 - **Cancel orders with received payment** — used with the setting above when part of the order already has a payment
 - **Restock items on cancellation**
 - **Email merchant on failure**

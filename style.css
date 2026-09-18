@@ -1,24 +1,8 @@
-/* Mirra brand — aligned with trywithmirra.com and shopper FAQ */
-
-@font-face {
-  font-family: "Open Sauce Sans";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 600;
-  src: url("/fonts/open-sauce-sans-latin-600-normal.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Open Sauce Sans";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url("/fonts/open-sauce-sans-latin-700-normal.woff2") format("woff2");
-}
+/* Match Help Center: cyan header, Poppins type, HubSpot heading sizes */
 
 :root {
   --mirra-bg: #f6f7f8;
-  --mirra-fg: #000000;
+  --mirra-fg: #33475b;
   --mirra-muted: #6b6b6b;
   --mirra-surface: #ffffff;
   --mirra-border: rgba(0, 0, 0, 0.08);
@@ -33,14 +17,9 @@
 }
 
 #navbar {
-  background: linear-gradient(
-    168deg,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(255, 255, 255, 0.8) 42%,
-    rgba(248, 248, 252, 0.74) 100%
-  );
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  backdrop-filter: blur(24px) saturate(1.4);
+  background: var(--mirra-accent);
+  border-bottom: none;
+  color: var(--mirra-ink);
 }
 
 #navbar img {
@@ -54,33 +33,68 @@
   color: #ffffff;
   border-radius: 999px;
   font-weight: 600;
-  letter-spacing: -0.02em;
 }
 
-#page-title {
-  letter-spacing: -0.035em;
-  font-weight: 600;
-  line-height: 1.08;
+#page-title,
+h1 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: normal;
+  color: var(--mirra-fg);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: normal;
+  color: var(--mirra-fg);
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: normal;
+  color: var(--mirra-fg);
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: normal;
+  color: var(--mirra-fg);
+}
+
+p,
+li,
+td,
+th {
+  font-size: 16px;
+  line-height: 22.4px;
+  color: var(--mirra-fg);
 }
 
 eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.52);
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--mirra-fg);
 }
 
 card,
 accordion {
-  border-radius: 18px;
+  border-radius: 8px;
   border: 1px solid var(--mirra-border);
   background: var(--mirra-surface);
-  box-shadow: 0 10px 40px -28px rgba(0, 0, 0, 0.12);
+  box-shadow: none;
 }
 
 callout {
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 #footer {
@@ -90,7 +104,7 @@ callout {
 
 html.dark {
   --mirra-bg: #0a0c10;
-  --mirra-fg: #ffffff;
+  --mirra-fg: #e8eaed;
   --mirra-muted: #a1a1aa;
   --mirra-surface: #16171b;
   --mirra-border: rgba(255, 255, 255, 0.1);
@@ -98,12 +112,8 @@ html.dark {
 }
 
 html.dark #navbar {
-  background: linear-gradient(
-    168deg,
-    rgba(22, 23, 27, 0.92) 0%,
-    rgba(10, 12, 16, 0.82) 100%
-  );
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--mirra-deep);
+  color: #ffffff;
 }
 
 html.dark #topbar-cta-button {
@@ -112,5 +122,5 @@ html.dark #topbar-cta-button {
 }
 
 html.dark eyebrow {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.7);
 }
