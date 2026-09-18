@@ -4,6 +4,8 @@ description: "Connect return-label providers, grant optional Shopify permissions
 keywords: ["integrations", "Starshipit", "Shippo", "optional permissions", "exchanges"]
 ---
 
+import { HelpCenter } from "/snippets/help-center.jsx";
+
 Open **Integrations** in the Mirra app. Connect the tools you use for labels and extra Shopify access. [Klaviyo](/merchants/klaviyo) and [MCP](/merchants/mcp) have their own pages.
 
 ## Optional Shopify permissions
@@ -41,9 +43,18 @@ Connect a provider before you select its method in [Return shipping](/merchants/
   </Step>
 </Steps>
 
-<Note>
-  Other fulfillment tools you already use (for example your 3PL) are not configured on this screen. Keep those in Shopify or the provider’s own admin. Tell the warehouse to ship Shopify orders that are **Authorized** and tagged **Try with Mirra**, and to skip **Failed to authorize payment** / **On hold**. See [Try orders](/merchants/try-orders#authorization-and-fulfillment).
-</Note>
+## Warehouse and ERP
+
+These tools are not configured on this screen. Keep them in Shopify or the provider’s admin. Ship only Shopify orders that are **Authorized** and tagged **Try with Mirra**. Skip **Failed to authorize payment** / **On hold**. See [Try orders](/merchants/try-orders#authorization-and-fulfillment).
+
+| System | What to do |
+| --- | --- |
+| **Cin7 Omni** | Import only **Authorised** and **Paid** Shopify orders. Send Mirra an API key, or invite [support@trywithmirra.com](mailto:support@trywithmirra.com) as a user. |
+| **Apparel21** | Keep your existing Shopify connector for purchased orders and skip **Try with Mirra** tags. Mirra writes try orders into Apparel21 as a normal sale, then a refund if items come back. Fulfil them like other web orders. |
+
+<HelpCenter>
+  Click-by-click: [Cin7 Omni](https://helpcenter.trywithmirra.com/knowledge-base/setting-up-your-cin7-omni-integration) and [Apparel21](https://helpcenter.trywithmirra.com/knowledge-base/how-try-with-mirra-works-with-apparel21).
+</HelpCenter>
 
 ## Other returns portals
 

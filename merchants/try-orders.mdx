@@ -44,7 +44,7 @@ Select an order, then **More actions**:
 | **Create New Order Link** | Build a checkout link with those products |
 | **Manage Return** | Add carrier and tracking (**Add Tracking**, **Send to customer**) |
 | **Generate Return Label** | Create a prepaid label when your return method supports it |
-| **Mark Return as Delivered** | Mark returned items received |
+| **Mark Return as Delivered** | Mark returned items received. Also stops return-reminder messages when the return is not tracked |
 | **Manage Trial Items** / **Review Trial Items** | **Move to Trial** or **Remove from Trial** after you change lines on the Shopify order |
 | **Set Payment Due Date** | Change the due date |
 | **Authorize Payment** | Retry authorization — including when a hold is already on the card but the amount is short |
@@ -99,17 +99,23 @@ If the hold cannot be placed:
 - If a retry succeeds, the hold and tag are cleared and the order can ship
 - If it still fails, the order is cancelled when **Cancel order when authorization fails** is on in [Settings → Advanced](/merchants/settings)
 
+Banks typically keep a hold for about **7 days**. Mirra refreshes it about **24 hours** before it expires. Shopify Plus stores can have a longer Shopify hold window (up to 30 days), so refresh happens less often. Longer fulfilment or a longer trial means more refreshes.
+
+If capture fails after a hold expires, Mirra retries and emails or texts the shopper. For a specific order, email [support@trywithmirra.com](mailto:support@trywithmirra.com).
+
 <Warning>
   Do not fulfil orders tagged **Failed to authorize payment**, marked **On hold**, or with payment **Pending** or **Expired**. Your warehouse should skip those until the order is **Authorized** again — or cancelled.
 </Warning>
 
 <HelpCenter>
-  Help Center: [Failed authorization recovery](https://helpcenter.trywithmirra.com/knowledge-base/failed-authorization-recovery) and [Warehouse and fulfilment](https://helpcenter.trywithmirra.com/knowledge-base/warehouse-and-fulfilment-integration-guide).
+  Help Center: [Failed authorization recovery](https://helpcenter.trywithmirra.com/knowledge-base/failed-authorization-recovery), [Recovering unpaid orders](https://helpcenter.trywithmirra.com/knowledge-base/recovering-unpaid-orders-in-mirra), and [Warehouse and fulfilment](https://helpcenter.trywithmirra.com/knowledge-base/warehouse-and-fulfilment-integration-guide).
 </HelpCenter>
 
 ## Missing or damaged returns
 
-If a shopper does not send an item back, or it comes back unsellable, you can add a charge on the Shopify order (edit the order and collect on the stored card) instead of opening a separate invoice. Write the reason on the order — for example item not returned, or damaged in trial.
+If a shopper does not send an item back, or it comes back unsellable, you can add a charge on the Shopify order (edit the order and collect on the stored card) instead of opening a separate invoice. Use the same edit when you need a cleaning or repair fee on an item that can still be sold. Write the reason on the order — for example item not returned, stain, or damaged in trial — and make sure your trial terms say when those charges apply.
+
+If they have already been charged and you later agree a refund, process that refund on the Shopify order.
 
 <HelpCenter>
   Help Center: [Manual charges for returns](https://helpcenter.trywithmirra.com/knowledge-base/manual-charges-for-returns-missing-or-damaged-items).
