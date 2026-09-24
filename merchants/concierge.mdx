@@ -43,7 +43,7 @@ On the **Bookings** tab, **Stores** are the locations shoppers can attend for **
 
 <Steps>
   <Step title="Add a store">
-    Click **Add store**. Set **Store name**, **Address line 1**, **City**, **Postcode**, and **Country** (pick the country by name). Optional: **Address line 2**, **State / province**, **Phone**, and **Timezone**.
+    Click **Add store**. Set **Store name**, **Address line 1**, **City**, **Postcode**, and **Country** (pick the country by name). Optional: **Address line 2**, **State / province**, **Phone**, and **Timezone**. When **Phone** is set, in-store booking emails include it with the store name and address.
   </Step>
   <Step title="Set hours and notifications">
     Turn on **Available for bookings** so shoppers can choose this location. Use **Custom store hours** if this location should not inherit the default concierge hours.
@@ -148,7 +148,7 @@ Customer: **Request received**, **Booking confirmed**, **Appointment reminder**,
 
 SMS (when enabled): booking confirmed / cancelled, appointment reminder, status updated.
 
-Set notification email and **Reply-to email**. Under **Email appearance**, click **Open Emails** to brand concierge and purchased-return mail — see [Emails](/merchants/emails). Try complete-order emails stay Mirra-branded.
+Set notification email and **Reply-to email**. In an email **Body**, **Click a token to insert it into the body**. `{{store_phone}}` is the store phone from **Add store**. Under **Email appearance**, click **Open Emails** to brand concierge and purchased-return mail — see [Emails](/merchants/emails). **From name** there applies to concierge emails as well as purchased returns. Try complete-order emails stay Mirra-branded.
 
 ### Customer visibility
 
