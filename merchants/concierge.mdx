@@ -16,10 +16,10 @@ Open **Bookings**. Tabs: **All** · **Pending** · **Confirmed** · **Contacted*
 
 <Steps>
   <Step title="Review a request">
-    Open a booking. **Approve booking** or **Reject**. You can also **Reschedule**, **Change time**, or **Confirm new time**. In-store bookings show the store the shopper chose.
+    Open a booking. **Approve booking** or **Reject**. You can also **Reschedule**, **Change time**, or **Confirm new time**. In-store bookings show the store the shopper chose. Answers to your pre-booking questions appear under **Booking answers**.
   </Step>
   <Step title="Create a booking">
-    Click **New booking**, then **Create booking**, if staff are booking on behalf of a shopper. For in-store types, pick a store first.
+    Click **New booking**, then **Create booking**, if staff are booking on behalf of a shopper. For in-store types, pick a store first. Pre-booking questions on that type show as **(optional)** — you can leave them blank.
   </Step>
 </Steps>
 
@@ -43,7 +43,7 @@ On the **Bookings** tab, **Stores** are the locations shoppers can attend for **
 
 <Steps>
   <Step title="Add a store">
-    Click **Add store**. Set **Store name**, **Address line 1**, **City**, **Postcode**, and **Country** (pick the country by name). Optional: **Address line 2**, **State / province**, **Phone**, and **Timezone**.
+    Click **Add store**. Set **Store name**, **Address line 1**, **City**, **Postcode**, and **Country** (pick the country by name). Optional: **Address line 2**, **State / province**, **Phone**, and **Timezone**. When **Phone** is set, in-store booking emails include it with the store name and address.
   </Step>
   <Step title="Set hours and notifications">
     Turn on **Available for bookings** so shoppers can choose this location. Use **Custom store hours** if this location should not inherit the default concierge hours.
@@ -72,6 +72,26 @@ Also set:
 
 Older types may still show **Video call** or **Phone call** as **(legacy)**. New types use **Virtual**.
 
+### Pre-booking questions
+
+On an appointment type, **Pre-booking questions** are what shoppers answer after they pick a time. Add only what you need before the appointment.
+
+<Steps>
+  <Step title="Add a question">
+    Click **Add question**. Choose **Short text**, **Long text**, **Date**, **Single choice**, or **Multiple choice**. Set **Question**, turn **Required** on or off, and use **Add description** if you want extra guidance.
+  </Step>
+  <Step title="Add choices">
+    For **Single choice** or **Multiple choice**, fill in **Choices** and click **Add choice**.
+  </Step>
+  <Step title="Reuse another type">
+    **Copy from another type** starts from questions you already wrote. If this type already has questions, confirm **Replace this type’s questions with a copy of the selected form?**
+  </Step>
+</Steps>
+
+A **Customer preview** sits next to the editor. On a narrow screen, switch **Edit questions** and **Customer preview**. You can add up to 20 questions. Drag to reorder them.
+
+Shoppers see these under **Your questions** in the portal and on the product-page booking panel. Each question is marked **required** or **optional**.
+
 ### Microsoft 365 and Outlook
 
 On an appointment type, **Microsoft 365** connects the mailbox that should own the calendar events.
@@ -93,6 +113,14 @@ On **Integrations**, **Microsoft 365** copies confirmed bookings to Outlook and 
 On a booking, **Details** can show **Join with Teams**. If sync failed you will see **This booking has not synced to Outlook**.
 
 Confirmed video bookings can include a Teams join link. Shoppers see **Join the Video Call**, which unlocks 15 minutes before the start (**Available from** a time).
+
+Times on the booking receipt and in concierge emails use the store timezone. After they book a video call, **How to join** tells them where the link is:
+
+- **Your video link is in your email** — the confirmation email includes it
+- **We'll email your video link before your appointment** — a reminder is scheduled, and that email includes the link
+- **We'll email your video link shortly** — the link is not ready yet
+
+If they cannot find the confirmation, the receipt says **Can't find your confirmation? Check your junk or spam folder.**
 
 ### Call and WhatsApp
 
@@ -120,7 +148,7 @@ Customer: **Request received**, **Booking confirmed**, **Appointment reminder**,
 
 SMS (when enabled): booking confirmed / cancelled, appointment reminder, status updated.
 
-Set notification email and **Reply-to email**. Under **Email appearance**, click **Open Emails** to brand concierge and purchased-return mail — see [Emails](/merchants/emails). Try complete-order emails stay Mirra-branded.
+Set notification email and **Reply-to email**. In an email **Body**, **Click a token to insert it into the body**. `{{store_phone}}` is the store phone from **Add store**. Under **Email appearance**, click **Open Emails** to brand concierge and purchased-return mail — see [Emails](/merchants/emails). **From name** there applies to concierge emails as well as purchased returns. Try complete-order emails stay Mirra-branded.
 
 ### Customer visibility
 
